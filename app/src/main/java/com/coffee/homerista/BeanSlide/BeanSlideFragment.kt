@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
+import kotlin.math.abs
 
 /**
  * The number of pages (wizard steps) to show in this demo.
@@ -43,7 +43,20 @@ class BeanSlideFragment : Fragment() {
         val pagerAdapter = ScreenSlidePagerAdapter(requireActivity())
         viewPager.adapter = pagerAdapter
 
-        viewPager.setPageTransformer(CompositePageTransformer())
+        //화면에 3개의 page 보이도록 하는 설정
+        viewPager.offscreenPageLimit = 3
+
+        viewPager.setPageTransformer { page, position ->
+            val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.margin_large)
+            val pagerWidth = resources.getDimensionPixelOffset(R.dimen.page_width)
+            val screenWidth = resources.displayMetrics.widthPixels
+            val offsetPx = screenWidth - pageMarginPx - pagerWidth
+
+            page.translationX = position * -offsetPx
+
+            val v = 1- abs(position)
+            page.scaleY = 0.8f + v * 0.2f
+        }
     }
 
     /**
