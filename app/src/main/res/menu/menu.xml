@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_bean"
+        android:icon="@drawable/bean"
+        android:iconTint="#A78976"
+        android:title="bean"/>
+
+    <item
+        android:id="@+id/navigation_extract"
+        android:icon="@drawable/extract"
+        android:iconTint="#A78976"
+        android:title="home"/>
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/shop"
+        android:iconTint="#A78976"
+        android:title="shop"/>
+</menu>
