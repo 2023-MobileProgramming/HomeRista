@@ -23,7 +23,7 @@ class ShopFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_show, container, false)
+        val view = inflater.inflate(R.layout.fragment_shop, container, false)
 
 
 
