@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -44,6 +45,20 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+
+    //데이터베이스 설정
+    val room_version = "2.6.0"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version") //여기까지 데이터베이스 필수 값.
+
+    ksp("androidx.room:room-compiler:$room_version")// To use Kotlin Symbol Processing (KSP)
+    implementation("androidx.room:room-ktx:$room_version") // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-rxjava2:$room_version")// optional - RxJava2 support for Room
+    implementation("androidx.room:room-rxjava3:$room_version")// optional - RxJava3 support for Room
+    implementation("androidx.room:room-guava:$room_version")// optional - Guava support for Room, including Optional and ListenableFuture
+    testImplementation("androidx.room:room-testing:$room_version")// optional - Test helpers
+    implementation("androidx.room:room-paging:$room_version")// optional - Paging 3 Integration
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
