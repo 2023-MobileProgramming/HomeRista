@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".RecordFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logo"
+        android:layout_gravity="center"
+        android:textSize="35dp" />
+
+    <LinearLayout
+        android:id="@+id/information_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
+            <ImageView
+                android:id="@+id/iv_temp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/record_temperature"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/iv_temp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/et_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도입력"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/iv_temp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/et_temp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/iv_decomp"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:src="@drawable/record_decomposition"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/tv_decomp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분해도"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/iv_decomp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/et_decomp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분해입력"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/iv_decomp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="um"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/et_decomp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/iv_weight"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:src="@drawable/record_weight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무게"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/iv_weight"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/et_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무게입력"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/iv_weight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="g"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/et_weight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="10dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/iv_bean"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:src="@drawable/record_bean"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="15dp" />
+            <TextView
+                android:id="@+id/tv_bean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원두"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/iv_bean"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="20dp" />
+            <TextView
+                android:id="@+id/et_bean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원두입력"
+                android:textSize="30dp"
+                app:layout_constraintStart_toEndOf="@id/iv_bean"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="20dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

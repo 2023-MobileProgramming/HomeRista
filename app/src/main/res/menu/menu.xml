@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/navigation_bean"
-        android:icon="@drawable/bean"
+        android:icon="@drawable/navi_bean"
         android:iconTint="#A78976"
         android:title="bean"/>
 
     <item
         android:id="@+id/navigation_extract"
-        android:icon="@drawable/extract"
+        android:icon="@drawable/navi_extract"
         android:iconTint="#A78976"
         android:title="home"/>
 
     <item
         android:id="@+id/navigation_shop"
-        android:icon="@drawable/shop"
+        android:icon="@drawable/navi_shop"
         android:iconTint="#A78976"
         android:title="shop"/>
 </menu>
