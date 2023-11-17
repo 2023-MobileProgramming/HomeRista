@@ -2,7 +2,6 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebView
 import com.coffee.homerista.shop.ShopFragment
 
 class MainActivity : AppCompatActivity() {
