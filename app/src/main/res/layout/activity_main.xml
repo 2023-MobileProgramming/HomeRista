@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!--빨간 줄 나와도 일단 수정할 필요 없음 -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"

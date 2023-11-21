@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var firstFragment: FirstFragment
     lateinit var beanSlidePageFragment: BeanSlidePageFragment
+    lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
     lateinit var extractFragment: ExtractFragment
@@ -41,7 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
         firstFragment = FirstFragment()
-        beanSlidePageFragment = BeanSlidePageFragment()
+        //beanSlidePageFragment = BeanSlidePageFragment()
+        beanSlideFragment = BeanSlideFragment()
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.navigation_bean -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, beanSlidePageFragment)
+                        .replace(R.id.fl, beanSlideFragment)
                         .commitAllowingStateLoss()
                     true
                 }

@@ -26,7 +26,7 @@ class ShopFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_shop, container, false)
 
 
-
+        //웹 뷰에 접속하기 위한 세팅과 메소드
 
         val webView = view.findViewById<WebView>(R.id.webView)
         webView.settings.javaScriptEnabled = true
