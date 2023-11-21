@@ -4,4 +4,5 @@
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">40dp</dimen>
     <dimen name="page_width">230dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

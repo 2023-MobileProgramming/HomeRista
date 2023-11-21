@@ -3,6 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@+id/firstFragment">
 
+
+
+
+    <fragment
+        android:id="@+id/beanSlideFm"
+        android:name="com.coffee.homerista.BeanSlide.BeanSlideFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_bean_slide" >
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/extractFragment"
+        android:name="com.coffee.homerista.extract.ExtractFragment"
+        android:label="fragment_extract"
+        tools:layout="@layout/fragment_extract" >
+    </fragment>
+
+
+
+
+
+
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.coffee.homerista.FirstFragment"
@@ -17,6 +44,11 @@
             app:destination="@id/shopFragment" />
     </fragment>
 
+
+
+
+
+
     <fragment
         android:id="@+id/shopFragment"
         android:name="com.coffee.homerista.shop.ShopFragment"
@@ -30,14 +62,28 @@
             app:destination="@id/beanSlideFm" />
     </fragment>
 
+
+
+
+
+
+
+
     <fragment
-        android:id="@+id/beanSlideFm"
-        android:name="com.coffee.homerista.BeanSlide.BeanSlideFragment"
-        android:label="fragment_shop"
-        tools:layout="@layout/fragment_bean_slide" >
+        android:id="@+id/beanSettings"
+        android:name="com.coffee.homerista.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" >
 
     </fragment>
 
+
+
+
+
+
+
+    <!-- 아직 안 쓰는 거
 
     <fragment
         android:id="@+id/recordFragment"
@@ -52,7 +98,11 @@
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" >
 
-    </fragment>
 
 
-</navigation>
+        -->
+
+
+
+
+    </navigation>

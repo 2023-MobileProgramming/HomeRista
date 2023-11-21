@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.coffee.homerista.FirstFragment
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
 import com.coffee.homerista.BeanSlide.BeanSlidePageFragment
+import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.coffee.homerista.RecordFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,6 +20,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
+import com.coffee.homerista.settings.SettingsFragment
 import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +30,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var beanSlidePageFragment: BeanSlidePageFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
+    lateinit var extractFragment: ExtractFragment
     lateinit var bottomNavigationView: BottomNavigationView
+    lateinit var settingsFragment: SettingsFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +43,12 @@ class MainActivity : AppCompatActivity() {
         firstFragment = FirstFragment()
         beanSlidePageFragment = BeanSlidePageFragment()
         shopFragment = ShopFragment()
+        extractFragment = ExtractFragment()
+        settingsFragment = SettingsFragment()
+
         recordFragment = RecordFragment()
+
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
@@ -49,7 +58,24 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
+
+
+                R.id.navigation_bean -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, beanSlidePageFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+
                 R.id.navigation_extract -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, extractFragment )
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+                R.id.navigation_home -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fl, firstFragment)
                         .commitAllowingStateLoss()
@@ -63,12 +89,18 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.navigation_bean -> {
+
+
+                R.id.navigation_setting -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, beanSlidePageFragment)
+                        .replace(R.id.fl, settingsFragment)
                         .commitAllowingStateLoss()
                     true
                 }
+
+
+
+
 
                 else -> false
 

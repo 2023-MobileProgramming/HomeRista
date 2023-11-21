@@ -45,12 +45,19 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.preference:preference:1.2.0")
+
+    //PreferenceFragmentCompat을 사용하려면 꼭 필요
+    implementation("androidx.preference:preference-ktx:1.2.1")
 
 
     //데이터베이스 설정
     val room_version = "2.6.0"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version") //여기까지 데이터베이스 필수 값.
+
+
+    // 네비게이션을 사용하기 위해 꼭 필요
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
 
