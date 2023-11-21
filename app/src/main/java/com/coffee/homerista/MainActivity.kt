@@ -2,51 +2,110 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
+import android.util.Log;
+import android.view.MenuItem;
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+import com.coffee.homerista.FirstFragment
+import com.coffee.homerista.BeanSlide.BeanSlideFragment
+import com.coffee.homerista.BeanSlide.BeanSlidePageFragment
+import com.coffee.homerista.extract.ExtractFragment
+import com.coffee.homerista.shop.ShopFragment
+import com.coffee.homerista.RecordFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.coffee.homerista.R
+import com.coffee.homerista.settings.SettingsFragment
+import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var extractionButton: FloatingActionButton
+
+
+    lateinit var firstFragment: FirstFragment
+    lateinit var beanSlidePageFragment: BeanSlidePageFragment
+    lateinit var shopFragment: ShopFragment
+    lateinit var recordFragment: RecordFragment
+    lateinit var extractFragment: ExtractFragment
+    lateinit var bottomNavigationView: BottomNavigationView
+    lateinit var settingsFragment: SettingsFragment
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        firstFragment = FirstFragment()
+        beanSlidePageFragment = BeanSlidePageFragment()
+        shopFragment = ShopFragment()
+        extractFragment = ExtractFragment()
+        settingsFragment = SettingsFragment()
+
+        recordFragment = RecordFragment()
+
+
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
-        extractionButton = findViewById(R.id.extractionButton)
 
-        val beanFragment = BeanTabFragment()
-        val extractionFragment = ExtractionTabFragment()
-        val shoppingFragment = ShoppingTabFragment()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fl, firstFragment)
+            .commitAllowingStateLoss()
 
-        setCurrentFragment(beanFragment)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
 
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.navigation_bean -> setCurrentFragment(beanFragment)
-                R.id.navigation_extract -> setCurrentFragment(extractionFragment)
-                R.id.navigation_shop -> setCurrentFragment(shoppingFragment)
+
+                R.id.navigation_bean -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, beanSlidePageFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+
+                R.id.navigation_extract -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, extractFragment )
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+                R.id.navigation_home -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, firstFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+                R.id.navigation_shop -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, shopFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+
+
+                R.id.navigation_setting -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, settingsFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+
+
+
+
+                else -> false
+
+
             }
-            true
-        }
-
-        // FloatingActionButton에 클릭 이벤트 추가
-        extractionButton.setOnClickListener {
-            // 팝업창 띄우는 로직을 여기에 추가
-            // 예를 들어, DialogFragment를 사용하여 팝업창을 띄울 수 있습니다.
         }
     }
-
-    private fun setCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl, fragment)
-            commit()
-        }
 }

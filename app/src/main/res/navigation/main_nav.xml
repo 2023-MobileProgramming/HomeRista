@@ -1,0 +1,108 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/firstFragment">
+
+
+
+
+    <fragment
+        android:id="@+id/beanSlideFm"
+        android:name="com.coffee.homerista.BeanSlide.BeanSlideFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_bean_slide" >
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/extractFragment"
+        android:name="com.coffee.homerista.extract.ExtractFragment"
+        android:label="fragment_extract"
+        tools:layout="@layout/fragment_extract" >
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.coffee.homerista.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/activity_main" >
+
+        <action
+            android:id="@+id/action_firstFragment_to_beanSlideFm3"
+            app:destination="@id/beanSlideFm" />
+        <action
+            android:id="@+id/action_firstFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.coffee.homerista.shop.ShopFragment"
+        android:label="fragment_shop"
+        tools:layout="@layout/fragment_shop" >
+        <action
+            android:id="@+id/action_shopFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_shopFragment_to_beanSlideFm"
+            app:destination="@id/beanSlideFm" />
+    </fragment>
+
+
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/beanSettings"
+        android:name="com.coffee.homerista.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" >
+
+    </fragment>
+
+
+
+
+
+
+
+    <!-- 아직 안 쓰는 거
+
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.coffee.homerista.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" />
+
+
+    <fragment
+        android:id="@+id/shopFm"
+        android:name="com.coffee.homerista.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record" >
+
+
+
+        -->
+
+
+
+
+    </navigation>
