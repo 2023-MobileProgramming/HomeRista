@@ -42,49 +42,36 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button1"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/bean"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/extract"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toEndOf="@+id/button1"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button3"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/shop"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
     </com.google.android.material.bottomappbar.BottomAppBar>
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/fl"
+        app:layout_constraintEnd_toEndOf="@+id/fl"
+        app:layout_constraintStart_toStartOf="@+id/fl"
+        app:layout_constraintTop_toTopOf="@+id/fl">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/extractionButton"
+            android:layout_width="167dp"
+            android:layout_height="181dp"
+            android:layout_margin="16dp"
+            app:backgroundTint="#2196F3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="추출하기"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
