@@ -11,6 +11,10 @@ import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
 import kotlin.math.abs
 
+
+
+
+
 /**
  * The number of pages (wizard steps) to show in this demo.
  */
@@ -36,6 +40,8 @@ class BeanSlideFragment : Fragment() {
     }
 
     private fun viewPageInit() {
+
+
         // Instantiate a ViewPager2 and a PagerAdapter.
         viewPager = viewGroup.findViewById(R.id.pager)
 
