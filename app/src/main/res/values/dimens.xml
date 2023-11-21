@@ -2,7 +2,7 @@
 <resources>
     <dimen name="margin_small">10dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
-    <dimen name="margin_large">40dp</dimen>
-    <dimen name="page_width">230dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="page_width">270dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 </resources>

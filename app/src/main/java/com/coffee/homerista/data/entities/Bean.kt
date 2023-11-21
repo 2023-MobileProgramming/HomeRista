@@ -9,10 +9,10 @@ data class Bean (
     val countries: String,
     val processing: String,
     val cupNote: String,
-    val body: Short,
-    val sweetSalty: Short,
-    val bitterSour: Short,
-    val darkLight: Short
+    val body: Int,
+    val sweetSalty: Int,
+    val bitterSour: Int,
+    val darkLight: Int
 ){
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0 //id값 자동 생성
