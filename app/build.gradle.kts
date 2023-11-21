@@ -50,6 +50,7 @@ dependencies {
     val room_version = "2.6.0"
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version") //여기까지 데이터베이스 필수 값.
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
     ksp("androidx.room:room-compiler:$room_version")// To use Kotlin Symbol Processing (KSP)
     implementation("androidx.room:room-ktx:$room_version") // optional - Kotlin Extensions and Coroutines support for Room

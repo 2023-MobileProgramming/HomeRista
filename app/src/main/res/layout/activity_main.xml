@@ -7,15 +7,16 @@
     android:background="#533B30"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fl"
+        android:name="com.coffee.homerista.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="70dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomAppBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/bottomAppBar" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
@@ -28,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fl"
+        app:layout_constraintTop_toBottomOf="@id/firstFragment"
         tools:ignore="BottomAppBar">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -42,49 +43,9 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button1"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/navi_bean"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/navi_extract"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toEndOf="@+id/button1"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button3"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:icon="@drawable/navi_shop"
-            app:iconGravity="textTop"
-            app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout> 
