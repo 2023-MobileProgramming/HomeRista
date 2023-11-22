@@ -2,6 +2,7 @@ package com.coffee.homerista.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity
 data class Bean (
@@ -13,7 +14,7 @@ data class Bean (
     val sweetSalty: Int,
     val bitterSour: Int,
     val darkLight: Int
-){
+) : Serializable {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0 //id값 자동 생성
 }
