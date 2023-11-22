@@ -8,7 +8,6 @@ import android.widget.SeekBar
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Bean
 
@@ -20,12 +19,16 @@ import com.coffee.homerista.data.entities.Bean
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val BEAN = "bean"
 
-class BeanSlidePageFragment(val bean: Bean) : Fragment() {
-    private val viewModel: BeanSlideViewModel by activityViewModels()
-
+class BeanSlidePageFragment() : Fragment() {
+    private lateinit var bean: Bean
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            bean = it.getSerializable(BEAN) as Bean
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,5 +67,14 @@ class BeanSlidePageFragment(val bean: Bean) : Fragment() {
                 .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
                 .commit()
         }
+    }
+    companion object {
+        @JvmStatic
+        fun newInstance(bean: Bean) =
+            BeanSlidePageFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(BEAN, bean)
+                }
+            }
     }
 }

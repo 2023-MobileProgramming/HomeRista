@@ -5,7 +5,6 @@ import android.os.Bundle
 
 import com.coffee.homerista.home.FirstFragment
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
-import com.coffee.homerista.BeanSlide.BeanSlidePageFragment
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -15,7 +14,6 @@ class MainActivity : AppCompatActivity() {
 
 
     lateinit var firstFragment: FirstFragment
-    lateinit var beanSlidePageFragment: BeanSlidePageFragment
     lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
@@ -30,8 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
         firstFragment = FirstFragment()
-        //beanSlidePageFragment = BeanSlidePageFragment()
-        beanSlideFragment = BeanSlideFragment()
+        beanSlideFragment = BeanSlideFragment.newInstance()
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()
@@ -81,7 +78,6 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     true
                 }
-
 
 
 

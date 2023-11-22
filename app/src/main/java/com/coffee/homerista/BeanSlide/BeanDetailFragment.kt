@@ -11,14 +11,14 @@ import androidx.appcompat.widget.AppCompatButton
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Bean
 
-private const val ARG_PARAM1 = "param1"
+private const val BEAN = "bean"
 
 class BeanDetailFragment : Fragment() {
     private lateinit var bean: Bean
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            bean = it.getSerializable(ARG_PARAM1) as Bean
+            bean = it.getSerializable(BEAN) as Bean
         }
     }
 
@@ -64,7 +64,7 @@ class BeanDetailFragment : Fragment() {
         fun newInstance(bean: Bean) =
             BeanDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(ARG_PARAM1, bean)
+                    putSerializable(BEAN, bean)
                 }
             }
     }
