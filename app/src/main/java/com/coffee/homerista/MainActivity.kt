@@ -2,32 +2,17 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log;
-import android.view.MenuItem;
-import androidx.fragment.app.Fragment
 
-import com.coffee.homerista.FirstFragment
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
-import com.coffee.homerista.BeanSlide.BeanSlidePageFragment
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
-import com.coffee.homerista.RecordFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
-import com.coffee.homerista.R
 import com.coffee.homerista.settings.SettingsFragment
-import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
 
 
     lateinit var firstFragment: FirstFragment
-    lateinit var beanSlidePageFragment: BeanSlidePageFragment
     lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
@@ -42,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
 
         firstFragment = FirstFragment()
-        //beanSlidePageFragment = BeanSlidePageFragment()
-        beanSlideFragment = BeanSlideFragment()
+        beanSlideFragment = BeanSlideFragment.newInstance()
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()

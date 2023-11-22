@@ -86,6 +86,11 @@ class BeanSlideFragment : Fragment() {
 
         override fun getItemCount(): Int = dataList.size
 
-        override fun createFragment(position: Int): Fragment = BeanSlidePageFragment(dataList[position])
+        override fun createFragment(position: Int): Fragment = BeanSlidePageFragment.newInstance(dataList[position])
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = BeanSlideFragment()
     }
 }
