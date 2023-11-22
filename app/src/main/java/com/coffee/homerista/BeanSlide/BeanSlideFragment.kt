@@ -1,11 +1,11 @@
 package com.coffee.homerista.BeanSlide
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
@@ -43,7 +43,7 @@ class BeanSlideFragment : Fragment() {
         viewPager = viewGroup.findViewById(R.id.pager)
 
         // The pager adapter, which provides the pages to the view pager widget.
-        val pagerAdapter = ScreenSlidePagerAdapter(requireActivity())
+        val pagerAdapter = ScreenSlidePagerAdapter(this)
         viewPager.adapter = pagerAdapter
 
         //화면에 3개의 page 보이도록 하는 설정
@@ -76,14 +76,15 @@ class BeanSlideFragment : Fragment() {
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
      * sequence.
      */
-    private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
-        private var dataList: List<Bean> = viewModel.dataList.value?: emptyList()
+    private inner class ScreenSlidePagerAdapter(fg: Fragment) : FragmentStateAdapter(fg) {
+        private var dataList: List<Bean> = emptyList()
+        @SuppressLint("NotifyDataSetChanged")
         fun setDataList(newList: List<Bean>) {
             dataList = newList
             notifyDataSetChanged()
         }
 
-        override fun getItemCount(): Int = viewModel.dataList.value?.count() ?: 0
+        override fun getItemCount(): Int = dataList.size
 
         override fun createFragment(position: Int): Fragment = BeanSlidePageFragment(dataList[position])
     }
