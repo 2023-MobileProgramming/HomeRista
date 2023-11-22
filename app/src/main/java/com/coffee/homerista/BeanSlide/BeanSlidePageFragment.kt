@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
@@ -34,6 +35,8 @@ class BeanSlidePageFragment(val bean: Bean) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val content: ConstraintLayout = view.findViewById(R.id.beanPage)
+
         val beanName: TextView = view.findViewById(R.id.beanName)
         val beanCountries: TextView = view.findViewById(R.id.beanCountries)
         val beanBody: SeekBar = view.findViewById(R.id.beanBody)
@@ -49,5 +52,17 @@ class BeanSlidePageFragment(val bean: Bean) : Fragment() {
         beanSweetSalty.progress = bean.sweetSalty
         beanBitterSour.progress = bean.bitterSour
         beanDarkLight.progress = bean.darkLight
+
+        //클릭시 상세페이지로 이동
+        content.setOnClickListener {
+            // 클릭 이벤트가 발생한 경우, 새로운 Fragment를 생성하고 추가
+            val beanDetailFragment = BeanDetailFragment.newInstance(bean)
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.fullScreen, beanDetailFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
+        }
     }
 }
