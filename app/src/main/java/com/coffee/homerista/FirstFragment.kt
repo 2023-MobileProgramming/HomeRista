@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
@@ -24,10 +27,91 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FirstFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+class ButtonAdapter(private val buttons: List<String>) :
+    RecyclerView.Adapter<ButtonAdapter.ButtonViewHolder>() {
+
+    class ButtonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val button: Button = view.findViewById(R.id.button)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_button, parent, false)
+        return ButtonViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ButtonViewHolder, position: Int) {
+        val itemPosition = position % buttons.size // 순환 인덱스
+        holder.button.text = buttons[itemPosition]
+    }
+
+    override fun getItemCount(): Int = Integer.MAX_VALUE // 무한 스크롤을 위한 설정
+}
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class FirstFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        val buttons = listOf("버튼1", "버튼2", "버튼3", "버튼4", "버튼5", "버튼6", "버튼7", "버튼8")
+        val adapter = ButtonAdapter(buttons)
+        recyclerView.adapter = adapter
+
+        // 스크롤 리스너 추가 (필요한 경우)
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                // 여기에 추가적인 무한 스크롤 로직을 구현할 수 있습니다.
+            }
+        })
+    }
+
+
+
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
