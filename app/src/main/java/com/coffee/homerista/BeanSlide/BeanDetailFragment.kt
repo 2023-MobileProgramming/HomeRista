@@ -60,6 +60,25 @@ class BeanDetailFragment : Fragment() {
         beanDarkLight.progress = bean.darkLight
         beanCupNote.text = bean.cupNote
 
+
+        val editButton: AppCompatButton = view.findViewById(R.id.beanDetailEditButton)
+        val removeButton: AppCompatButton = view.findViewById(R.id.beanDetailRemoveButton)
+
+        editButton.setOnClickListener {
+            val beanEditFragment = BeanEditFragment.newInstance(bean)
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.fullScreen, beanEditFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
+        }
+
+        removeButton.setOnClickListener {
+            viewModel.delete(bean)
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
     }
 
     companion object {
