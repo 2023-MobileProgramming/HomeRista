@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Bean
 
@@ -22,6 +23,8 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class BeanSlidePageFragment(val bean: Bean) : Fragment() {
+    private val viewModel: BeanSlideViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

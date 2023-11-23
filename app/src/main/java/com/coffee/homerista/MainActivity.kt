@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
+        // 네비게이션 바의 디폴트 선택값
+        bottomNavigationView.selectedItemId = R.id.navigation_home
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.fl, firstFragment)
             .commitAllowingStateLoss()
@@ -90,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     true
                 }
+
 
 
 
