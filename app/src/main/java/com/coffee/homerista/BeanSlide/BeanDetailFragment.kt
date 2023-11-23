@@ -18,6 +18,15 @@ class BeanDetailFragment : Fragment() {
     private lateinit var bean: Bean
     private val viewModel: BeanViewModel by activityViewModels {BeanViewModel.Factory}
 
+    lateinit var beanName: TextView
+    lateinit var beanCountries: TextView
+    lateinit var beanProcessing: TextView
+    lateinit var beanBody: SeekBar
+    lateinit var beanSweetSalty: SeekBar
+    lateinit var beanBitterSour: SeekBar
+    lateinit var beanDarkLight: SeekBar
+    lateinit var beanCupNote: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,30 +45,28 @@ class BeanDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //값이 수정되면 변한 값으로 보여주기 위한 observe 등록
+        viewModel.dataList.observe(viewLifecycleOwner) { dataList ->
+            bean = dataList.find { bean -> bean.id == this.bean.id } ?: bean
+            bindData()
+        }
+
         //뒤로가기 버튼
         val backButton: AppCompatButton = view.findViewById(R.id.beanDetailBackButton)
         backButton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        val beanName: TextView = view.findViewById(R.id.beanDetailName)
-        val beanCountries: TextView = view.findViewById(R.id.beanDetailCountries)
-        val beanProcessing: TextView = view.findViewById(R.id.beanDetailProcessing)
-        val beanBody: SeekBar = view.findViewById(R.id.beanDetailBody)
-        val beanSweetSalty: SeekBar = view.findViewById(R.id.beanDetailSweetSalty)
-        val beanBitterSour: SeekBar = view.findViewById(R.id.beanDetailBitterSour)
-        val beanDarkLight: SeekBar = view.findViewById(R.id.beanDetailDarkLight)
-        val beanCupNote: TextView = view.findViewById(R.id.beanDetailCupNote)
+        beanName = view.findViewById(R.id.beanDetailName)
+        beanCountries = view.findViewById(R.id.beanDetailCountries)
+        beanProcessing = view.findViewById(R.id.beanDetailProcessing)
+        beanBody = view.findViewById(R.id.beanDetailBody)
+        beanSweetSalty = view.findViewById(R.id.beanDetailSweetSalty)
+        beanBitterSour= view.findViewById(R.id.beanDetailBitterSour)
+        beanDarkLight = view.findViewById(R.id.beanDetailDarkLight)
+        beanCupNote = view.findViewById(R.id.beanDetailCupNote)
 
-        beanName.text = bean.name
-        beanCountries.text = bean.countries
-        beanProcessing.text = bean.processing
-        beanBody.progress = bean.body
-        beanSweetSalty.progress = bean.sweetSalty
-        beanBitterSour.progress = bean.bitterSour
-        beanDarkLight.progress = bean.darkLight
-        beanCupNote.text = bean.cupNote
-
+        bindData()
 
         val editButton: AppCompatButton = view.findViewById(R.id.beanDetailEditButton)
         val removeButton: AppCompatButton = view.findViewById(R.id.beanDetailRemoveButton)
@@ -79,6 +86,18 @@ class BeanDetailFragment : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
+    }
+
+    // LiveData가 변경될 때 호출되는 UI 업데이트 메서드
+    private fun bindData() {
+        beanName.text = bean.name
+        beanCountries.text = bean.countries
+        beanProcessing.text = bean.processing
+        beanBody.progress = bean.body
+        beanSweetSalty.progress = bean.sweetSalty
+        beanBitterSour.progress = bean.bitterSour
+        beanDarkLight.progress = bean.darkLight
+        beanCupNote.text = bean.cupNote
     }
 
     companion object {

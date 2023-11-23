@@ -103,6 +103,14 @@ class BeanSlideFragment : Fragment() {
         override fun getItemCount(): Int = dataList.size
 
         override fun createFragment(position: Int): Fragment = BeanSlidePageFragment.newInstance(dataList[position])
+
+        override fun getItemId(position: Int): Long {
+            return dataList[position].id.toLong()
+        }
+
+        override fun containsItem(itemId: Long): Boolean {
+            return dataList.any { bean -> bean.id.toLong() == itemId }
+        }
     }
 
     companion object {
