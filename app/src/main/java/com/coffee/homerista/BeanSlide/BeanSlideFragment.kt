@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
@@ -22,10 +22,8 @@ class BeanSlideFragment : Fragment() {
      */
     private lateinit var viewPager: ViewPager2
     private lateinit var viewGroup: ViewGroup
-    private val viewModel: BeanSlideViewModel by viewModels {
-        val repository = BeanRepository(requireActivity().application)
-        BeanSlideViewModelFactory(repository)
-    }
+    private lateinit var beanAddButton: ImageView
+    private val viewModel: BeanViewModel by activityViewModels {BeanViewModel.Factory}
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
+import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Bean
 
@@ -15,6 +16,8 @@ private const val BEAN = "bean"
 
 class BeanDetailFragment : Fragment() {
     private lateinit var bean: Bean
+    private val viewModel: BeanViewModel by activityViewModels {BeanViewModel.Factory}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

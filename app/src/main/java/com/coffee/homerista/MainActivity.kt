@@ -2,8 +2,10 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
+import com.coffee.homerista.BeanSlide.BeanViewModel
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -11,6 +13,8 @@ import com.coffee.homerista.settings.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
+    //bean에서 사용할 viewModel 생성
+    private val beanViewModel: BeanViewModel by viewModels { BeanViewModel.Factory }
 
     lateinit var firstFragment: FirstFragment
     lateinit var beanSlideFragment: BeanSlideFragment
