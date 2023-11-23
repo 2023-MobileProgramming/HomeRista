@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,25 +35,25 @@ private const val ARG_PARAM2 = "param2"
 
 
 
-class ButtonAdapter(private val buttons: List<String>) :
-    RecyclerView.Adapter<ButtonAdapter.ButtonViewHolder>() {
+class LinearLayoutAdapter(private val items: List<String>) :
+    RecyclerView.Adapter<LinearLayoutAdapter.LinearLayoutViewHolder>() {
 
-    class ButtonViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val button: Button = view.findViewById(R.id.button)
+    class LinearLayoutViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val linearLayout: LinearLayout = view.findViewById(R.id.linearLayout)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinearLayoutViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_button, parent, false)
-        return ButtonViewHolder(view)
+            .inflate(R.layout.item_linear_layout, parent, false)
+        return LinearLayoutViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ButtonViewHolder, position: Int) {
-        val itemPosition = position % buttons.size // 순환 인덱스
-        holder.button.text = buttons[itemPosition]
+    override fun onBindViewHolder(holder: LinearLayoutViewHolder, position: Int) {
+        val itemPosition = position % items.size
+        // Bind data to the views inside the LinearLayout as needed
     }
 
-    override fun getItemCount(): Int = Integer.MAX_VALUE // 무한 스크롤을 위한 설정
+    override fun getItemCount(): Int = Integer.MAX_VALUE
 }
 
 
@@ -93,8 +94,8 @@ class FirstFragment : Fragment() {
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val buttons = listOf("버튼1", "버튼2", "버튼3", "버튼4", "버튼5", "버튼6", "버튼7", "버튼8")
-        val adapter = ButtonAdapter(buttons)
+        val items = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8")
+        val adapter = LinearLayoutAdapter(items)
         recyclerView.adapter = adapter
 
         // 스크롤 리스너 추가 (필요한 경우)

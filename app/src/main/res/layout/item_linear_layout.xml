@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/flrecyclerView">
-
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +64,8 @@
         <CalendarView
             android:id="@+id/testcl1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="#ffffff"/>
 
         <Button
             android:id="@+id/testt5"
@@ -122,9 +121,7 @@
 
         </Button>
     </LinearLayout>
-
-
-
+    <!-- Add other views here as needed, e.g., TextViews, ImageViews -->
 
 
 </LinearLayout>
