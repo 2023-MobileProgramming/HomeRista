@@ -2,16 +2,17 @@ package com.coffee.homerista.BeanSlide
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Bean
-import com.coffee.homerista.repository.BeanRepository
 import kotlin.math.abs
 
 class BeanSlideFragment : Fragment() {
@@ -34,6 +35,21 @@ class BeanSlideFragment : Fragment() {
         viewPageInit()
         observeData()
         return viewGroup
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        beanAddButton = view.findViewById(R.id.beanAddButton)
+        beanAddButton.setOnClickListener {
+            val beanEditFragment = BeanEditFragment.newInstance()
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fullScreen, beanEditFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
+        }
     }
 
     private fun viewPageInit() {
@@ -65,6 +81,8 @@ class BeanSlideFragment : Fragment() {
         viewModel.dataList.observe(viewLifecycleOwner) { dataList ->
             // 데이터가 변경되었을 때 화면 업데이트 등의 작업 수행
             // 예: pagerAdapter에 새로운 데이터 설정
+            Log.d("로그", "${dataList} 변화 감지")
+            Log.d("로그", "${dataList.size} 변화 감지")
             val pagerAdapter = viewPager.adapter as? ScreenSlidePagerAdapter
             pagerAdapter?.setDataList(dataList)
         }
