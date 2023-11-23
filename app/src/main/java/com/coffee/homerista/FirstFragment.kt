@@ -44,7 +44,7 @@ class LinearLayoutAdapter(private val items: List<String>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinearLayoutViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_linear_layout, parent, false)
+            .inflate(R.layout.fragment_first_recyclerview_items, parent, false)
         return LinearLayoutViewHolder(view)
     }
 
