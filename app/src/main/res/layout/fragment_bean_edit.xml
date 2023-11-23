@@ -6,28 +6,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bean_image"
-    tools:context=".BeanSlide.BeanDetailFragment">
+    tools:context=".BeanSlide.BeanDetailFragment"
+    android:clickable="true"
+    android:focusable="true">
 
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:background="@drawable/bean_image">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/beanDetailBackButton"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bean_back_button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -36,21 +28,8 @@
                 android:layout_marginBottom="10dp"
                 android:text="원두 명"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailName"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/beanDetailName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:text="원두 이름"
-                android:textColor="#EFC3A4"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView12"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
@@ -60,17 +39,32 @@
                 android:layout_marginBottom="10dp"
                 android:text="생산 국가"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailCountries"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditCountries"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/beanDetailCountries"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/beanEditName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="원두 이름"
+                android:gravity="center"
+                android:textColor="#EFC3A4"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/beanEditCountries"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="생산 국가"
                 android:textColor="#EFC3A4"
-                android:textSize="25sp"
+                android:textSize="20sp"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -87,34 +81,60 @@
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/beanDetailCountries" />
+                app:layout_constraintTop_toBottomOf="@+id/beanEditCountries" />
 
-            <TextView
-                android:id="@+id/beanDetailProcessing"
+            <RadioGroup
+                android:id="@+id/beanRadioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="프로세싱"
-                android:textColor="#EFC3A4"
-                android:textSize="25sp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+                <RadioButton
+                    android:id="@+id/radio_washed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="워시드"
+                    android:textColor="@color/white"
+                    android:theme="@style/BeanRadioButton"/>
+
+                <RadioButton
+                    android:id="@+id/radio_natural"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="내추럴"
+                    android:textColor="@color/white"
+                    android:theme="@style/BeanRadioButton"/>
+
+                <RadioButton
+                    android:id="@+id/radio_blending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="블렌딩"
+                    android:textColor="@color/white"
+                    android:theme="@style/BeanRadioButton"/>
+            </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_height="0dp"
+        android:layout_weight="6"
         android:background="@drawable/bean_detail_top_shape">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-<!--            바디-->
+            <!--            바디-->
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="40dp"
@@ -127,17 +147,17 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <SeekBar
-                android:id="@+id/beanDetailBody"
+                android:id="@+id/beanEditBody"
                 style="@style/BeanSeekBar"
                 android:layout_width="250dp"
                 android:layout_height="20dp"
                 android:layout_marginBottom="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailSweetSalty"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditSweetSalty"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.132"
                 app:layout_constraintStart_toEndOf="@+id/textView16" />
 
-<!--            단맛, 짠맛-->
+            <!--            단맛, 짠맛-->
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
@@ -150,12 +170,12 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <SeekBar
-                android:id="@+id/beanDetailSweetSalty"
+                android:id="@+id/beanEditSweetSalty"
                 style="@style/BeanSeekBar"
                 android:layout_width="250dp"
                 android:layout_height="20dp"
                 android:layout_marginBottom="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailBitterSour"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditBitterSour"
                 app:layout_constraintEnd_toStartOf="@+id/textView18"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toEndOf="@+id/textView17" />
@@ -171,7 +191,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView20"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-<!--            쓴맛, 산미-->
+            <!--            쓴맛, 산미-->
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
@@ -184,12 +204,12 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <SeekBar
-                android:id="@+id/beanDetailBitterSour"
+                android:id="@+id/beanEditBitterSour"
                 style="@style/BeanSeekBar"
                 android:layout_width="250dp"
                 android:layout_height="20dp"
                 android:layout_marginBottom="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailDarkLight"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditDarkLight"
                 app:layout_constraintEnd_toStartOf="@+id/textView20"
                 app:layout_constraintHorizontal_bias="0.508"
                 app:layout_constraintStart_toEndOf="@+id/textView19" />
@@ -205,7 +225,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView22"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-<!--            강배전, 약배전-->
+            <!--            강배전, 약배전-->
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
@@ -218,7 +238,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <SeekBar
-                android:id="@+id/beanDetailDarkLight"
+                android:id="@+id/beanEditDarkLight"
                 style="@style/BeanSeekBar"
                 android:layout_width="250dp"
                 android:layout_height="20dp"
@@ -238,7 +258,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/textView11"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-<!--            컵노트-->
+            <!--            컵노트-->
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
@@ -247,12 +267,12 @@
                 android:text="컵노트"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailCupNote"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditCupNote"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/beanDetailCupNote"
+            <EditText
+                android:id="@+id/beanEditCupNote"
                 android:layout_width="300dp"
                 android:layout_height="100dp"
                 android:layout_marginBottom="25dp"
@@ -260,37 +280,36 @@
                 android:text="컵노트 내용"
                 android:textColor="#EFC3A4"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/beanDetailRemoveButton"
+                app:layout_constraintBottom_toTopOf="@+id/beanEditCancelButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/beanDetailRemoveButton"
+                android:id="@+id/beanEditCancelButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/bean_detail_button_shape"
-                android:text="삭제"
+                android:text="취소"
                 android:textColor="#EFC3A4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/beanDetailEditButton"
+                android:id="@+id/beanEditConfirmButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/bean_detail_button_shape"
-                android:text="수정"
+                android:text="확인"
                 android:textColor="#EFC3A4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </FrameLayout>
 </LinearLayout>
