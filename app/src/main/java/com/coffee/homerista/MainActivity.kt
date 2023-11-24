@@ -10,6 +10,7 @@ import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.homerista.settings.SettingsFragment
+import com.coffee.homerista.home.FirstFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
+
+        bottomNavigationView.selectedItemId = R.id.navigation_home
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fl, firstFragment)
