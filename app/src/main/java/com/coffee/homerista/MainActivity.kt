@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 
-import com.coffee.homerista.home.FirstFragment
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
 import com.coffee.homerista.BeanSlide.BeanViewModel
 import com.coffee.homerista.extract.ExtractFragment
@@ -42,9 +41,6 @@ class MainActivity : AppCompatActivity() {
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
-
-        // 네비게이션 바의 디폴트 선택값
-        bottomNavigationView.selectedItemId = R.id.navigation_home
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fl, firstFragment)
