@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fl"
-        android:name="com.coffee.homerista.FirstFragment"
+        android:name="com.coffee.homerista.home.FirstFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="70dp"

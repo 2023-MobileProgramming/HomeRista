@@ -1,19 +1,14 @@
-package com.coffee.homerista
+package com.coffee.homerista.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.R
-import kotlin.math.abs
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,26 +30,6 @@ private const val ARG_PARAM2 = "param2"
 
 
 
-class LinearLayoutAdapter(private val items: List<String>) :
-    RecyclerView.Adapter<LinearLayoutAdapter.LinearLayoutViewHolder>() {
-
-    class LinearLayoutViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val linearLayout: LinearLayout = view.findViewById(R.id.linearLayout)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinearLayoutViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_first_recyclerview_items, parent, false)
-        return LinearLayoutViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: LinearLayoutViewHolder, position: Int) {
-        val itemPosition = position % items.size
-        // Bind data to the views inside the LinearLayout as needed
-    }
-
-    override fun getItemCount(): Int = Integer.MAX_VALUE
-}
 
 
 

@@ -2,26 +2,14 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log;
-import android.view.MenuItem;
-import androidx.fragment.app.Fragment
 
-import com.coffee.homerista.FirstFragment
+import com.coffee.homerista.home.FirstFragment
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
 import com.coffee.homerista.BeanSlide.BeanSlidePageFragment
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.shop.ShopFragment
-import com.coffee.homerista.RecordFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
-import com.coffee.homerista.R
 import com.coffee.homerista.settings.SettingsFragment
-import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
 

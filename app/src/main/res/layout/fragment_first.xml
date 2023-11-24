@@ -6,17 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FirstFragment">
+    tools:context=".home.FirstFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RecyclerView 테스트"
+        android:text="RecyclerView Test"
         android:textSize="32dp"
         android:textColor="#FFFFFFFF"
         android:padding="8dp"
         android:background="#FF3F3F3F"
         android:gravity="center"/>
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
