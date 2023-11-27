@@ -1,183 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="830dp"
+    android:background="@drawable/record_backimage"
     android:orientation="vertical"
     tools:context=".RecordFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="logo"
-        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:text="HomRista"
+        android:textColor="#EFC3A4"
         android:textSize="35dp" />
 
+    <Button
+        android:id="@+id/cameraBtn"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#EFC3A4"
+        android:text="카메라" />
+
+    <Chronometer
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_height="60dp"
+        android:textColor="#EFC3A4"
+        android:layout_marginTop="260dp"
+        android:gravity="center"
+        android:textSize="40dp" />
+
     <LinearLayout
-        android:id="@+id/information_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="20dp">
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp">
-            <ImageView
-                android:id="@+id/iv_temp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_temperature"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/tv_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="온도"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@id/iv_temp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/et_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="온도입력"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/iv_temp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/et_temp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="4dp"
+            android:backgroundTint="#533B30"
+            android:text="start" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp">
-            <ImageView
-                android:id="@+id/iv_decomp"
-                android:layout_width="70dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_decomposition"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/tv_decomp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분해도"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@id/iv_decomp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/et_decomp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분해입력"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/iv_decomp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="um"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/et_decomp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="4dp"
+            android:backgroundTint="#533B30"
+            android:text="reset" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/okayBtn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp">
-            <ImageView
-                android:id="@+id/iv_weight"
-                android:layout_width="70dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_weight"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/tv_weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="무게"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@id/iv_weight"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/et_weight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="무게입력"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/iv_weight"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="g"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/et_weight"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_margin="10dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-            <ImageView
-                android:id="@+id/iv_bean"
-                android:layout_width="70dp"
-                android:layout_height="80dp"
-                android:src="@drawable/record_bean"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_margin="15dp" />
-            <TextView
-                android:id="@+id/tv_bean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="원두"
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@id/iv_bean"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:id="@+id/et_bean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="원두입력"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@id/iv_bean"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginLeft="20dp"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="4dp"
+            android:backgroundTint="#533B30"
+            android:text="save" />
 
     </LinearLayout>
 
 
+    <TableLayout
+        android:id="@+id/information_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TableRow>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:padding="1dp">
+
+                <ImageView
+                    android:id="@+id/iv_temp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/record_temperature"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도"
+                    android:textColor="#533B30"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_temp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도입력"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_temp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="C"
+                    android:textColor="#EFC3A4"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/et_temp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_decomp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/record_decomposition"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_decomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="분해도"
+                    android:textColor="#533B30"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_decomp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_decomp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="분해입력"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_decomp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="um"
+                    android:textColor="#EFC3A4"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/et_decomp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_weight"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/record_weight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="무게"
+                    android:textColor="#533B30"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_weight"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="무게입력"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_weight" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="g"
+                    android:textColor="#EFC3A4"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/et_weight" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_bean"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/record_bean"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="원두"
+                    android:textColor="#533B30"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_bean"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_bean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="원두입력"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_bean" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </TableRow>
 
 
+    </TableLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:backgroundTint="#533B30"
+        android:textColor="@color/white"
+        android:text="저장하기" />
 
 </LinearLayout>
