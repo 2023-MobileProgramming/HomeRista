@@ -7,25 +7,38 @@
     android:background="#533B30"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="154dp"
-        android:padding="@dimen/margin_large"
-        app:srcCompat="@drawable/bean_logo"
-        android:layout_marginTop="16dp"/>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="154dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/groupImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/logoImageView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="76dp"
+            android:layout_marginEnd="61dp"
+            app:srcCompat="@drawable/cupplus" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/logoImageView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:background="#EFC3A4"/>
 
         <!-- 선택된 날짜를 표시할 ConstraintLayout -->
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,10 +48,9 @@
             android:layout_below="@id/calendarView"
             android:layout_marginTop="16dp">
 
-
-            <!-- 날짜를 출력할 TextView -->
+            <!-- rectangle_46 이미지 -->
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/rectangleImageView"
                 android:layout_width="322dp"
                 android:layout_height="163dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -49,23 +61,20 @@
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/rectangle_46" />
 
+            <!-- displayedDateTextView -->
             <TextView
                 android:id="@+id/displayedDateTextView"
                 android:layout_width="117dp"
                 android:layout_height="66dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintBottom_toBottomOf="@+id/rectangleImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.12"
                 app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="@+id/rectangleImageView"
+                app:layout_constraintTop_toTopOf="@+id/rectangleImageView"
                 app:layout_constraintVertical_bias="0.120000005" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
-
-    <!-- 선택된 날짜를 표시할 TextView -->
-
-    <!-- 날짜를 출력할 TextView -->
 
 </LinearLayout>
