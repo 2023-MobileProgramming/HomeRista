@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BeanSeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">#EFC3A4</item>
+        <item name="android:progressTint">#EFC3A4</item>
+        <item name="android:thumbTint">#0E0504</item>
+    </style>
+
+    <style name="BeanRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#EFC3A4</item>
+        <item name="colorControlNormal">#EFC3A4</item>
+    </style>
+</resources>

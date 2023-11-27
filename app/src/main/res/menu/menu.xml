@@ -11,6 +11,12 @@
         android:id="@+id/navigation_extract"
         android:icon="@drawable/navi_extract"
         android:iconTint="#A78976"
+        android:title="extract"/>
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/navi_home"
+        android:iconTint="#A78976"
         android:title="home"/>
 
     <item
@@ -18,4 +24,12 @@
         android:icon="@drawable/navi_shop"
         android:iconTint="#A78976"
         android:title="shop"/>
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/navi_setting"
+        android:iconTint="#A78976"
+        android:title="setting"/>
+
+
 </menu>
