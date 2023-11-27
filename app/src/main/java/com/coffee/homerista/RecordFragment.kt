@@ -65,11 +65,13 @@ class RecordFragment : Fragment() {
         var resetBtn: Button = recordView.findViewById(R.id.resetBtn)
         var saveBtn: Button = recordView.findViewById(R.id.saveBtn)
         var timer: Chronometer = recordView.findViewById(R.id.timer)
+        var recordBtn: Button = recordView.findViewById(R.id.recordBtn)
+        var recordTime: Long = 0
         var pauseTime = 0L
 
 
         startBtn.setOnClickListener {
-            timer.base = SystemClock.elapsedRealtime() + pauseTime
+            timer.base = SystemClock.elapsedRealtime() - recordTime
             timer.start()
             // 버튼 표시 여부 조정
             startBtn.isEnabled = false
@@ -78,9 +80,9 @@ class RecordFragment : Fragment() {
         }
 
         resetBtn.setOnClickListener {
-            pauseTime = 0L
             timer.base = SystemClock.elapsedRealtime()
-            timer.stop()
+            recordTime = 0
+            timer.start()
             startBtn.isEnabled = true
             resetBtn.isEnabled = false
         }
@@ -88,6 +90,13 @@ class RecordFragment : Fragment() {
         saveBtn.setOnClickListener {
             startBtn.isEnabled = false
             resetBtn.isEnabled = false
+            timer.stop()
+            recordTime = SystemClock.elapsedRealtime() - timer.base
+
+        }
+
+        recordBtn.setOnClickListener {
+            showRecordDialog()
         }
         return recordView
     }

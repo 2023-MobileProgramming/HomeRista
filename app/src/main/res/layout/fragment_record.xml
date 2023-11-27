@@ -59,7 +59,7 @@
             android:text="reset" />
 
         <Button
-            android:id="@+id/okayBtn"
+            android:id="@+id/saveBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -98,7 +98,8 @@
                     android:layout_height="wrap_content"
                     android:text="온도"
                     android:textColor="#533B30"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
                     app:layout_constraintStart_toEndOf="@id/iv_temp"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,8 +115,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:text="C"
+                    android:layout_marginLeft="3dp"
                     android:textColor="#EFC3A4"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -124,13 +125,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:padding="1dp">
 
                 <ImageView
                     android:id="@+id/iv_decomp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_margin="15dp"
                     android:src="@drawable/record_decomposition"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -139,10 +141,10 @@
                     android:id="@+id/tv_decomp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
                     android:text="분해도"
                     android:textColor="#533B30"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
                     app:layout_constraintStart_toEndOf="@id/iv_decomp"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -150,8 +152,7 @@
                     android:id="@+id/et_decomp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="분해입력"
+                    android:text="분해도입력"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/iv_decomp" />
@@ -159,8 +160,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:text="um"
+                    android:layout_marginLeft="3dp"
                     android:textColor="#EFC3A4"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -172,13 +173,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:padding="1dp">
 
                 <ImageView
                     android:id="@+id/iv_weight"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_margin="15dp"
                     android:src="@drawable/record_weight"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -187,18 +189,16 @@
                     android:id="@+id/tv_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
                     android:text="무게"
                     android:textColor="#533B30"
-                    android:textSize="20dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_weight"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_weight"/>
 
                 <TextView
                     android:id="@+id/et_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:text="무게입력"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -207,8 +207,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:text="g"
+                    android:layout_marginLeft="3dp"
                     android:textColor="#EFC3A4"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -217,13 +217,14 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:padding="1dp">
 
                 <ImageView
                     android:id="@+id/iv_bean"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_margin="15dp"
                     android:src="@drawable/record_bean"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -232,18 +233,16 @@
                     android:id="@+id/tv_bean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:text="원두"
                     android:textColor="#533B30"
-                    android:textSize="20dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_bean"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintStart_toEndOf="@id/iv_bean"/>
 
                 <TextView
                     android:id="@+id/et_bean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:text="원두입력"
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -254,7 +253,7 @@
 
     </TableLayout>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/saveBtn"
+        android:id="@+id/recordBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
