@@ -199,7 +199,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
-                        android:id="@+id/flimage3_1"
+                        android:id="@+id/flimage2_1"
                         android:src="@drawable/flimage1_1"
                         android:layout_marginTop="10dp"
                         >
@@ -230,7 +230,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
-                        android:id="@+id/flimage3_2"
+                        android:id="@+id/flimage2_2"
                         android:src="@drawable/flimage1_2"
                         android:layout_marginTop="10dp">
                     </ImageView>
@@ -262,7 +262,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
-                        android:id="@+id/flimage3_3"
+                        android:id="@+id/flimage2_3"
                         android:src="@drawable/flimage1_2"
                         android:layout_marginTop="10dp">
                     </ImageView>
@@ -292,7 +292,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="140dp"
                         android:layout_marginTop="10dp"
-                        android:id="@+id/flimage3_4"
+                        android:id="@+id/flimage2_4"
                         android:src="@drawable/flimage1_1">
                     </ImageView>
                     <TextView
@@ -353,24 +353,19 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:id="@+id/fl2_layout1"
             android:gravity="right|center"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="">
 
-            </TextView>
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:id="@+id/flimage2_1"
+                android:id="@+id/flimage3_1"
                 android:src="@drawable/flimage1_2"
 
                 >
@@ -394,7 +389,7 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:id="@+id/flimage2_2"
+                android:id="@+id/flimage3_2"
                 android:src="@drawable/flimage1_2">
             </ImageView>
 
@@ -414,7 +409,7 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:id="@+id/flimage2_3"
+                android:id="@+id/flimage3_3"
                 android:src="@drawable/flimage1_2">
             </ImageView>
 
