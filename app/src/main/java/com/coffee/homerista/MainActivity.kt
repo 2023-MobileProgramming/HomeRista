@@ -11,6 +11,7 @@ import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.homerista.settings.SettingsFragment
 import com.coffee.homerista.home.FirstFragment
+import com.coffee.homerista.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var extractFragment: ExtractFragment
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var settingsFragment: SettingsFragment
+    lateinit var ProfileFragment: ProfileFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()
+        ProfileFragment = ProfileFragment()
 
         recordFragment = RecordFragment()
 
@@ -63,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.navigation_extract -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, extractFragment )
+                        .replace(R.id.fl, ProfileFragment )
                         .commitAllowingStateLoss()
                     true
                 }
