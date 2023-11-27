@@ -1,34 +1,429 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#eeeeee"
+    android:id="@+id/flScrollView"
     tools:context=".home.FirstFragment">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RecyclerView Test"
-        android:textSize="32dp"
-        android:textColor="#FFFFFFFF"
-        android:padding="8dp"
-        android:background="#FF3F3F3F"
-        android:gravity="center"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User 님을 위한 추천"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            android:gravity="left"
+            android:typeface="serif"
+            android:textColor="#FF3F3F3F"
+            android:padding="8dp"
+            />
+
+
+        <!--
+
+       첫 번째:   원두 추천 -> 수평 스크롤
+       10개
+       요소
+           사진
+           콘텐츠 제목
+           콘텐츠 내용
+
+
+       -->
 
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage1_1"
+                        android:src="@drawable/flimage1_1">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="프루티 봉봉"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage1_2"
+                        android:src="@drawable/flimage1_2">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="에스 쇼콜라"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage1_3"
+                        android:src="@drawable/flimage1_2">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="에스 쇼콜라"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage1_4"
+                        android:src="@drawable/flimage1_1">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="프루티 봉봉"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
 
 
 
 
-    <!-- TODO: Update blank fragment layout -->
+            </LinearLayout>
 
-</LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="맞춤 컨텐츠 추천"
+            android:layout_marginTop="4dp"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            android:gravity="left"
+            android:typeface="serif"
+            android:textColor="#FF3F3F3F"/>
+
+
+
+        <!--
+
+        두 번째:   콘텐츠들 -> 수직 스크롤
+        수직 레이아웃으로 3개
+        요소
+            사진
+            콘텐츠 제목
+            콘텐츠 내용
+
+
+        -->
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fl2_layout1"
+            android:gravity="right|center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/flimage2_1"
+                android:src="@drawable/flimage1_2"
+
+                >
+            </ImageView>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fl2_layout2"
+            android:gravity="right|center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/flimage2_2"
+                android:src="@drawable/flimage1_2">
+            </ImageView>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center"
+            android:id="@+id/fl2_layout3"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            >
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/flimage2_3"
+                android:src="@drawable/flimage1_2">
+            </ImageView>
+
+
+
+        </RelativeLayout>
+
+
+
+        <!--
+
+            3. 요즘 뜨는 바리스타 기구들
+                수평 스크롤
+                요소
+                    사진
+                    기구 이름
+
+        -->
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="요즘 뜨는 바리스타 기구들"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            android:gravity="left"
+            android:textColor="#FF3F3F3F"/>
+
+
+
+
+
+
+        <!--
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+            -->
+
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage3_1"
+                        android:src="@drawable/flimage1_1">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="프루티 봉봉"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage3_2"
+                        android:src="@drawable/flimage1_2">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="에스 쇼콜라"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage3_3"
+                        android:src="@drawable/flimage1_2">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="에스 쇼콜라"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="280dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="140dp"
+                        android:id="@+id/flimage3_4"
+                        android:src="@drawable/flimage1_1">
+                    </ImageView>
+                    <TextView
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:text="프루티 봉봉"
+                        android:textStyle="bold"
+                        android:textSize="22dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
+                        android:textSize="13dp"
+                        android:ellipsize="end"/>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+
+
+        <!-- TODO: Update blank fragment layout -->
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</ScrollView>
