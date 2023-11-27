@@ -18,7 +18,7 @@
         android:textSize="35dp" />
 
     <com.coffee.homerista.extract.CircleBar
-        android:id="@+id/circularProgressBar"
+        android:id="@+id/circleBar"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="52dp"
         android:layout_width="200dp"
@@ -77,14 +77,12 @@
     </LinearLayout>
 
 
-    <TableLayout
+    <LinearLayout
         android:id="@+id/information_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
-
-        <TableRow>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
@@ -175,10 +173,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/et_decomp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </TableRow>
-
-        <TableRow>
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -256,10 +250,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/iv_bean" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </TableRow>
 
-
-    </TableLayout>
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/recordBtn"
         android:layout_width="200dp"
