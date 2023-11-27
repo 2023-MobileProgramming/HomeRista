@@ -13,8 +13,8 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val database = HomRistaDatabase.getInstance(this)
-        beanRepository = BeanRepository(database!!.beanDao())
-        recordRepository = RecordRepository(database!!.recordDao())
+        val database = HomRistaDatabase.getInstance(this)!!
+        beanRepository = BeanRepository(database.beanDao())
+        recordRepository = RecordRepository(database.recordDao())
     }
 }

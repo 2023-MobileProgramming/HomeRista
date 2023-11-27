@@ -13,11 +13,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.homerista.settings.SettingsFragment
 import com.coffee.homerista.home.FirstFragment
 import com.coffee.homerista.ProfileFragment
+import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class MainActivity : AppCompatActivity() {
 
     //bean에서 사용할 viewModel 생성
-    private val beanViewModel: BeanViewModel by viewModels { BeanViewModel.Factory }
+    private val beanViewModel: BeanViewModel by viewModels{ BeanViewModel.Factory }
+    //record에서 사용할 ViewModel 생성
+    private val recordViewModel: RecordViewModel by viewModels { RecordViewModel.Factory }
 
     lateinit var firstFragment: FirstFragment
     lateinit var beanSlideFragment: BeanSlideFragment
