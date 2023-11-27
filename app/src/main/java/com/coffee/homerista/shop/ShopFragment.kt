@@ -34,13 +34,15 @@ class ShopFragment : Fragment() {
         val webSettings: WebSettings = webView.settings
 
 
-        val newUserAgent = "Mozilla/5.0 (Linux; Android 10; Pixel 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Mobile Safari/537.36"
+        val newUserAgent = "Mozilla/5.0 (Linux; Android 10; Android SDK built for x86) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Mobile Safari/537.36"
         webSettings.userAgentString = newUserAgent
 
 
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://shoppinglive.naver.com/search/lives?query=%EC%BB%A4%ED%94%BC")
+        webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
+
+        // https://shoppinglive.naver.com/search/lives?query=%EC%BB%A4%ED%94%BC
         webView.setOnKeyListener { v, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_BACK) {
                 if (webView.canGoBack()) {
