@@ -7,15 +7,20 @@ import androidx.activity.viewModels
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
 import com.coffee.homerista.BeanSlide.BeanViewModel
 import com.coffee.homerista.extract.ExtractFragment
+import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.coffee.homerista.settings.SettingsFragment
 import com.coffee.homerista.home.FirstFragment
+import com.coffee.homerista.ProfileFragment
+import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class MainActivity : AppCompatActivity() {
 
     //bean에서 사용할 viewModel 생성
-    private val beanViewModel: BeanViewModel by viewModels { BeanViewModel.Factory }
+    private val beanViewModel: BeanViewModel by viewModels{ BeanViewModel.Factory }
+    //record에서 사용할 ViewModel 생성
+    private val recordViewModel: RecordViewModel by viewModels { RecordViewModel.Factory }
 
     lateinit var firstFragment: FirstFragment
     lateinit var beanSlideFragment: BeanSlideFragment
@@ -24,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var extractFragment: ExtractFragment
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var settingsFragment: SettingsFragment
+    lateinit var ProfileFragment: ProfileFragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()
+        ProfileFragment = ProfileFragment()
 
         recordFragment = RecordFragment()
 
@@ -63,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.navigation_extract -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, extractFragment )
+                        .replace(R.id.fl, ProfileFragment )
                         .commitAllowingStateLoss()
                     true
                 }
