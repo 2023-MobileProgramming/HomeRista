@@ -6,18 +6,21 @@
     android:background="#533B30"
     android:orientation="vertical">
 
-    <ImageView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bean_logo"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="#00FFFFFF"
+        android:id="@+id/beanAddButton"
+        android:src="@drawable/bean_logo" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:clipChildren="false"/>
+        android:clipChildren="false"
+        android:saveEnabled="false"/>
 
 </LinearLayout>

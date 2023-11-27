@@ -1,38 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".BeanSlidePageFragment">-->
-
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:text="@string/hello_blank_fragment" />-->
-
-<!--</FrameLayout>-->
-
-    <!-- fragment_screen_slide_page.xml -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/content"
-android:layout_width="match_parent"
-android:layout_height="match_parent" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beanPage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+
+<!--        바디감-->
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="바디감"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/beanImage" />
+
+        <SeekBar
+            android:id="@+id/beanBody"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            style="@style/BeanSeekBar"
+            app:layout_constraintBottom_toTopOf="@+id/beanSweetSalty"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/textView8" />
+
+        <!--        단맛, 짠맛-->
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="단맛"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/beanImage" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="짠맛"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="@+id/beanImage" />
+
+        <SeekBar
+            android:id="@+id/beanSweetSalty"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            style="@style/BeanSeekBar"
+            app:layout_constraintBottom_toTopOf="@+id/beanBitterSour"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintStart_toEndOf="@+id/textView7" />
+
+        <!--        쓴맛 산미-->
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="쓴맛"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/beanImage" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="산미"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
+            app:layout_constraintEnd_toEndOf="@+id/beanImage" />
+
+        <SeekBar
+            android:id="@+id/beanBitterSour"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            style="@style/BeanSeekBar"
+            app:layout_constraintBottom_toTopOf="@+id/beanDarkLight"
+            app:layout_constraintEnd_toStartOf="@+id/textView10"
+            app:layout_constraintStart_toEndOf="@+id/textView9" />
+        <!--        강배전, 약배전-->
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="강배전"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/beanImage"
+            app:layout_constraintStart_toStartOf="@+id/beanImage" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="약배전"
+            android:textColor="#EFC3A4"
+            app:layout_constraintBottom_toTopOf="@+id/beanImage"
+            app:layout_constraintEnd_toEndOf="@+id/beanImage" />
+
+        <SeekBar
+            android:id="@+id/beanDarkLight"
+            style="@style/BeanSeekBar"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/beanImage"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/textView4" />
 
         <ImageView
-            android:layout_width="230dp"
-            android:layout_height="230dp"
-            android:src="@drawable/bean_taste_attribute"/>
+            android:id="@+id/beanImage"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:background="@drawable/bean_card_top_shape"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bean_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.603" />
 
-        <ImageView
-            android:layout_width="230dp"
-            android:layout_height="230dp"
-            android:src="@drawable/bean_card"/>
-    </LinearLayout>
+        <FrameLayout
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bean_card_bottom_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/beanImage">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/beanName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="원두 이름"
+                    android:textSize="20dp"
+                    android:textColor="#1E130E"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/beanCountries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="원두 나라"
+                    android:textSize="13dp"
+                    android:textColor="#1E130E"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/beanName" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
