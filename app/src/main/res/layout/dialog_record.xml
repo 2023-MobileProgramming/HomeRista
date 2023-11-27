@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="#FEDDBA">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="커피를 기억하고 싶다면\n프로파일을 저장해주세요!"
+        android:textSize="15dp"
+        android:textColor="#533B30"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제목"
+        android:textColor="#533B30"
+        android:textSize="12dp"
+        android:layout_marginLeft="10dp"/>
+    <EditText
+        android:id="@+id/title_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추출 평가"
+        android:textSize="12dp"
+        android:textColor="#533B30"
+        android:layout_marginLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:background="@drawable/navi_bean"
+            android:layout_margin="3dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:background="@drawable/navi_bean"
+            android:layout_margin="3dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:background="@drawable/navi_bean"
+            android:layout_margin="3dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:background="@drawable/navi_bean"
+            android:layout_margin="3dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="27dp"
+            android:background="@drawable/navi_bean"
+            android:layout_margin="3dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comment_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한줄평"
+        android:textSize="12dp"
+        android:layout_marginLeft="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="12dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="5dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="67dp"
+            android:layout_height="40dp"
+            android:text="취소"
+            android:textColor="#FEDDBA"
+            android:textSize="12dp"
+            android:backgroundTint="#533B30"
+            android:layout_gravity="right"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="67dp"
+            android:layout_height="40dp"
+            android:text="저장"
+            android:textColor="#FEDDBA"
+            android:textSize="12dp"
+            android:backgroundTint="#533B30"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
+</LinearLayout>
