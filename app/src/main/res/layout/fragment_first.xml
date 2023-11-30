@@ -5,28 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#eeeeee"
+    android:background="#533B30"
     android:id="@+id/flScrollView"
     tools:context=".home.FirstFragment">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="User 님을 위한 추천"
-            android:textSize="24dp"
-            android:textStyle="bold|italic"
-            android:gravity="left"
-            android:typeface="serif"
-            android:textColor="#FF3F3F3F"
-            android:padding="8dp"
-            />
 
 
         <!--
@@ -42,142 +30,384 @@
        -->
 
 
-
-
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage1_1"
-                        android:src="@drawable/flimage1_1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage1_2"
-                        android:src="@drawable/flimage1_2">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage1_3"
-                        android:src="@drawable/flimage1_2"
-                        android:layout_weight="1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage1_4"
-                        android:src="@drawable/flimage1_1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-        </HorizontalScrollView>
-
-
-
-
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="요즘 뜨는 바리스타 기구들"
+            android:text="User 님을 위한 원두 추천"
             android:textSize="24dp"
             android:textStyle="bold|italic"
             android:typeface="serif"
             android:gravity="left"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
-            android:textColor="#FF3F3F3F"/>
+            android:textColor="#EFC3A4"
+            android:padding="0dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/coffeebean1"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:src="@drawable/coffeebean1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="하와이 코나 커피"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:ellipsize="end"
+                            android:text="완벽한 균형과 강한 산미!\n약간 스파이시한 뒷맛!"
+                            android:textSize="13dp"
+                            android:gravity="center"
+                            android:layout_marginBottom="5dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:id="@+id/coffeebean2"
+                            android:src="@drawable/coffeebean2">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="파나마 게이샤 커피"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="한국에서 '고구마향'으로 유명한 커피!\n각종 열대과일맛을 느낄수 있다!"
+                            android:textSize="13dp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginBottom="5dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:id="@+id/coffeebean3"
+                            android:src="@drawable/coffeebean3">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="술라웨시 토라자 커피"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="산미는 별로.. 구수한 맛을 찾는다면!?\n술라웨시 토라자 커피를 추천합니다."
+                            android:textSize="13dp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginBottom="5dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            android:id="@+id/coffeebean4"
+                            android:src="@drawable/coffeebean4">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="탄자니아 피베리 커피"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="적절한 양의 산도를 지닌 미디엄 바디!\n초콜릿 향과 오래 지속되는 뒷맛!"
+                            android:textSize="13dp"
+                            android:ellipsize="end"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:layout_marginBottom="5dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘의 커피 이야기"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            android:gravity="left"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#EFC3A4"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#EFC3A4">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="나라별 이색 커피"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:layout_gravity="center|left"
+                        android:text="세계 여행하면서\n여유롭게 커피 마시는\n상상을 해요~"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="240dp"
+                    android:src="@drawable/content1"
+                    android:layout_gravity="right"
+                    android:padding="0dp">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#EFC3A4">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="커피는 나쁜걸까?"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:layout_gravity="center|left"
+                        android:text="커피에대한 오해들!\n커피! 제대로 알고\n마시자!!!"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="240dp"
+                    android:src="@drawable/content2"
+                    android:layout_gravity="right"
+                    android:padding="0dp">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right|center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#EFC3A4">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="20dp">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Coffe Magazine"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:layout_gravity="center|left"
+                        android:text="따끈따끈한 12월호\n새로운 소식은\n홈리스타에서 읽자~"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="240dp"
+                    android:src="@drawable/content3"
+                    android:layout_gravity="right"
+                    android:padding="0dp">
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="요즘 HOT한 제품"
+            android:textSize="24dp"
+            android:textStyle="bold|italic"
+            android:typeface="serif"
+            android:gravity="left"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#EFC3A4"/>
 
 
 
@@ -185,409 +415,196 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:columnCount="2"
-            android:rowCount="2">
+            android:rowCount="2"
+            android:stretchColumns="*">
 
             <TableRow>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:layout_weight="1"
-                    android:background="@drawable/view_border">
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage2_1"
-                        android:src="@drawable/flimage1_1"
-                        android:layout_marginTop="10dp"
-                        >
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/view_border"
+                        android:padding="5dp">
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="180dp"
+                            android:id="@+id/tool1"
+                            android:src="@drawable/tool1"
+                            android:layout_marginTop="5dp">
+                        </ImageView>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:text="어디서나 간편하게!"
+                            android:textSize="13dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="드립 커피 머신"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_marginBottom="3dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:layout_weight="1"
-                    android:background="@drawable/view_border">
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage2_2"
-                        android:src="@drawable/flimage1_2"
-                        android:layout_marginTop="10dp">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-            </TableRow>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/view_border"
+                        android:padding="5dp">
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="180dp"
+                            android:id="@+id/tool3"
+                            android:src="@drawable/tool3"
+                            android:layout_marginTop="5dp">
+                        </ImageView>
 
-            <TableRow>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:background="@drawable/view_border">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage2_3"
-                        android:src="@drawable/flimage1_2"
-                        android:layout_marginTop="10dp">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:background="@drawable/view_border">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/flimage2_4"
-                        android:src="@drawable/flimage1_1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:text="마니아들 취향저격!"
+                            android:textSize="13dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="핸드커피 그라인더"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_marginBottom="3dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
             </TableRow>
 
+            <TableRow>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/view_border"
+                        android:padding="5dp">
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="180dp"
+                            android:id="@+id/tool6"
+                            android:src="@drawable/tool6"
+                            android:layout_marginTop="5dp">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:text="높이 조절 가능한~"
+                            android:textSize="13dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"/>
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="우드스탠드 드리퍼"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="22dp"
+                            android:layout_marginBottom="3dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#EFC3A4">
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:background="@drawable/view_border"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="180dp"
+                                android:layout_marginTop="5dp"
+                                android:id="@+id/tool4"
+                                android:src="@drawable/tool4">
+                            </ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:text="캐맥스가 자랑하는 과학적 기구"
+                                android:textSize="13dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="호리병 드리퍼"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="22dp"
+                                android:layout_marginBottom="3dp"/>
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </TableRow>
 
         </TableLayout>
 
 
-
-        <!--
-
-        두 번째:   콘텐츠들 -> 수직 스크롤
-        수직 레이아웃으로 3개
-        요소
-            사진
-            콘텐츠 제목
-            콘텐츠 내용
-
-
-        -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="맞춤 컨텐츠 추천"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="24dp"
-            android:textStyle="bold|italic"
-            android:gravity="left"
-            android:typeface="serif"
-            android:textColor="#FF3F3F3F"
-            />
-
-
-
-
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fl2_layout1"
-            android:gravity="right|center"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            >
-
-
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:id="@+id/flimage3_1"
-                android:src="@drawable/flimage1_2"
-
-                >
-            </ImageView>
-
-
-
-        </RelativeLayout>
-
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fl2_layout2"
-            android:gravity="right|center"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            >
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:id="@+id/flimage3_2"
-                android:src="@drawable/flimage1_2">
-            </ImageView>
-
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right|center"
-            android:id="@+id/fl2_layout3"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            >
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:id="@+id/flimage3_3"
-                android:src="@drawable/flimage1_2">
-            </ImageView>
-
-
-
-        </RelativeLayout>
-
-
-
-        <!--
-
-            3. 요즘 뜨는 바리스타 기구들
-                수평 스크롤
-                요소
-                    사진
-                    기구 이름
-
-        -->
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="요즘 뜨는 바리스타 기구들"
-            android:textSize="24dp"
-            android:textStyle="bold|italic"
-            android:typeface="serif"
-            android:gravity="left"
-            android:textColor="#FF3F3F3F"/>
-
-
-
-
-
-
-        <!--
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-            -->
-
-
-
-        <!--
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage3_1"
-                        android:src="@drawable/flimage1_1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage3_2"
-                        android:src="@drawable/flimage1_2">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage3_3"
-                        android:src="@drawable/flimage1_2">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="에스 쇼콜라"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="에스쇼콜라는 초콜릿을 연상시키는 강배전 스타일의 커피가 주를 이루던 시절 개발된 커피로, 모두에게 사랑받을 수 있는 커피를 만들고자 했던 모모스커피의 옛 시간과 마음이 담겨있습니다."
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="280dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="280dp"
-                        android:layout_height="140dp"
-                        android:id="@+id/flimage3_4"
-                        android:src="@drawable/flimage1_1">
-                    </ImageView>
-                    <TextView
-                        android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:text="프루티 봉봉"
-                        android:textStyle="bold"
-                        android:textSize="22dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="프루티 봉봉은 이름처럼 과일, 꽃을 연상시키는 향미와 새콤달콤함을 경험하실 수 있도록 미디엄 라이트 로스팅으로 마무리하였습니다. "
-                        android:textSize="13dp"
-                        android:ellipsize="end"/>
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-
-
-        </HorizontalScrollView>
-        -->
-
-
-
-
-        <!-- TODO: Update blank fragment layout -->
-
     </LinearLayout>
-
-
-
-
-
-
-
 
 </ScrollView>
