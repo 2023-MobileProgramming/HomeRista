@@ -5,14 +5,13 @@ import android.util.AttributeSet
 import android.widget.ProgressBar
 
 class CircleBar : ProgressBar {
-    private lateinit var mPaint: Paint
+    private var mPaint: Paint = Paint()
     private var totalTime: Int = 60 // 기본 시간 설정 (60초)
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     init {
-        mPaint = Paint()
         mPaint.isAntiAlias = true
         mPaint.style = Paint.Style.STROKE
         mPaint.strokeWidth = 10f // 프로그레스 바의 두께 조절
