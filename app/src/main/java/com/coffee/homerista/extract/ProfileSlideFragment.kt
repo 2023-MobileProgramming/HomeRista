@@ -112,7 +112,7 @@ class ProfileSlideFragment : Fragment() {
 
         override fun getItemCount(): Int = dataList.size
 
-        override fun createFragment(position: Int): Fragment = DetailProfileFragment(dataList[position])
+        override fun createFragment(position: Int): Fragment = DetailProfileFragment.newInstance(dataList[position])
 
         override fun getItemId(position: Int): Long {
             return dataList[position].id.toLong()

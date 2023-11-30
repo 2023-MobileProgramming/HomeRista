@@ -1,7 +1,6 @@
 package com.coffee.homerista.ProFile
 
 import android.os.Bundle
-import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +11,9 @@ import androidx.fragment.app.Fragment
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Record
 
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class DetailProfileFragment(private val record: Record) : Fragment() {
-    // TODO: Rename and change types of parameters
+private const val RECORD = "record"
+class DetailProfileFragment() : Fragment() {
+    private lateinit var record: Record
 
     private lateinit var min : TextView
     private lateinit var sec: TextView
@@ -44,6 +39,12 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
     private lateinit var trashBtn: Button
     var isEditable = false
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            record = it.getSerializable(RECORD) as Record
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -136,5 +137,15 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
         title.text = record.title
         rating.text = record.rating.toString()
         comment.text = record.comment
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance(record: Record) =
+            DetailProfileFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(RECORD, record)
+                }
+            }
     }
 }
