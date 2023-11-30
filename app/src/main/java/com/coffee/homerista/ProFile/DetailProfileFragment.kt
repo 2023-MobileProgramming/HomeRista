@@ -26,14 +26,24 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
     private lateinit var decomp: TextView
     private lateinit var weight: TextView
     private lateinit var beanName: TextView
+    private lateinit var minEt :  EditText
+    private lateinit var secEt:  EditText
+    private lateinit var tempEt:  EditText
+    private lateinit var decompEt:  EditText
+    private lateinit var weightEt:  EditText
+    private lateinit var beanNameEt:  EditText
     //private lateinit var date: TextView
     private lateinit var title: TextView
     private lateinit var rating: TextView
     private lateinit var comment: TextView
+    private lateinit var titleEt: EditText
+    private lateinit var ratingEt: EditText
+    private lateinit var commentEt: EditText
 
     private lateinit var modifyBtn: Button
     private lateinit var trashBtn: Button
     var isEditable = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,16 +62,28 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
         decomp = view.findViewById(R.id.decomp)
         weight = view.findViewById(R.id.weight)
         beanName = view.findViewById(R.id.bean)
+        minEt = view.findViewById(R.id.minEt)
+        secEt = view.findViewById(R.id.secondEt)
+        tempEt = view.findViewById(R.id.tempEt)
+        decompEt = view.findViewById(R.id.decompEt)
+        weightEt = view.findViewById(R.id.weightEt)
+        beanNameEt = view.findViewById(R.id.beanEt)
+
         title = view.findViewById(R.id.title_tv)
         rating = view.findViewById(R.id.rating_tv)
         comment = view.findViewById(R.id.comment_tv)
+        titleEt = view.findViewById(R.id.title_et)
+        ratingEt = view.findViewById(R.id.rating_et)
+        commentEt = view.findViewById(R.id.comment_et)
 
         modifyBtn = view.findViewById(R.id.modifyBtn)
         trashBtn = view.findViewById(R.id.trashBtn)
 
         bindProfileData()
 
-        val viewsToConvert = listOf(min, sec, temp, decomp, weight, beanName, title, rating, comment)
+        val textToEdit = listOf(min, sec, temp, decomp, weight, beanName, title, rating, comment)
+        val editToText = listOf(minEt, secEt, tempEt, decompEt, weightEt, beanNameEt, titleEt, ratingEt, commentEt)
+        var stringArr = arrayOfNulls<String>(9)
         var isEditable = false
 
 
@@ -69,36 +91,31 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
             isEditable =! isEditable
 
             if(isEditable) {
-                viewsToConvert.forEach { view ->
-                    if (view is TextView) {
-                        val editText = EditText(context)
-                        editText.textSize = view.textSize
-                        editText.hint = view.text
-                        editText.setText(view.text)
-                        editText.layoutParams = view.layoutParams
-                        editText.id = view.id
-
-                        val parentLayout = view.parent as ViewGroup
-                        val index = parentLayout.indexOfChild(view)
-                        parentLayout.removeView(view)
-                        parentLayout.addView(editText, index)
-                    }
+                var count : Int = 0
+                textToEdit.forEach { view ->
+                    view.visibility = View.INVISIBLE
+                    stringArr[count]= view.text.toString()
+                    count++
+                }
+                count = 0
+                editToText.forEach { view ->
+                    view.hint = stringArr[count]
+                    count++
+                    view.visibility = View.VISIBLE
                 }
                 modifyBtn.setBackgroundResource(R.drawable.check)
             } else {
-                viewsToConvert.forEach { view ->
-                    if (view is EditText) {
-                        val textView = TextView(context)
-                        textView.textSize = view.textSize
-                        textView.text = view.text
-                        textView.layoutParams = view.layoutParams
-                        textView.id = view.id
-
-                        val parentLayout = view.parent as ViewGroup
-                        val index = parentLayout.indexOfChild(view)
-                        parentLayout.removeView(view)
-                        parentLayout.addView(textView, index)
-                    }
+                var count : Int = 0
+                editToText.forEach { view ->
+                    stringArr[count]= view.text.toString()
+                    count++
+                    view.visibility = View.INVISIBLE
+                }
+                count = 0
+                textToEdit.forEach {view ->
+                    view.text = stringArr[count]
+                    count++
+                    view.visibility = View.VISIBLE
                 }
                 modifyBtn.setBackgroundResource(R.drawable.modify)
             }
