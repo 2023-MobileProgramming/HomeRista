@@ -9,67 +9,133 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            tools:context=".ProFile.DetailProfileFragment">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="500dp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="190dp"
-                android:layout_marginTop="310dp"
-                android:padding="17dp">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ProFile.DetailProfileFragment">
 
-        <TextView
-            android:id="@+id/title_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Saturday Mood"
-            android:textSize="30dp"
-            android:layout_margin="3dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/modifyBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/modify" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trashBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/trash" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:padding="17dp" >
+
         <LinearLayout
-            android:id="@+id/rating_ll"
+            android:id="@+id/detail_left_cl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_tv">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="35dp"
-                android:background="@drawable/navi_bean"
-                android:layout_marginLeft="20dp"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:id="@+id/rating_tv"
+            app:layout_constraintTop_toTopOf="parent">
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saturday Mood"
+                    android:textSize="30dp"
+                    android:visibility="visible"
+                    android:layout_margin="3dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <EditText
+                    android:id="@+id/title_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saturday Mood"
+                    android:textSize="30dp"
+                    android:layout_margin="3dp"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/rating_ll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4"
-                android:textSize="25dp"
-                android:layout_margin="10dp"/>
-            <TextView
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_tv">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/navi_bean"
+                    android:layout_margin="10dp"/>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                    <TextView
+                        android:id="@+id/rating_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:visibility="visible"
+                        android:textSize="25dp"
+                        android:layout_margin="10dp"/>
+                    <EditText
+                        android:id="@+id/rating_et"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textSize="25dp"
+                        android:visibility="invisible"
+                        android:layout_margin="10dp"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textSize="25dp"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textSize="25dp"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+            <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="/"
-                android:textSize="25dp"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textSize="25dp"
-                android:layout_margin="10dp"/>
-
-                </LinearLayout>
-
-
+                android:layout_height="wrap_content" >
 
                 <TextView
                     android:id="@+id/comment_tv"
@@ -81,123 +147,257 @@
                     app:layout_constraintTop_toBottomOf="@id/rating_ll"
                     android:gravity="center_horizontal"
                     android:padding="3dp"
-                    android:layout_margin="4dp"
-                    />
+                    android:visibility="visible"
+                    android:layout_margin="4dp" />
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/comment_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginRight="20dp">
+                    android:textSize="15dp"
+                    android:text="원두의 바디감이 무거워서 \n한주를 정리하기에 좋은 커피였다"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rating_ll"
+                    android:gravity="center_horizontal"
+                    android:padding="3dp"
+                    android:visibility="invisible"
+                    android:layout_margin="4dp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detail_right_cl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="3dp"
-                        android:gravity="center">
+                        android:text="온도"
+                        android:textSize="15dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="온도"
-                            android:textSize="15dp" />
-                        <TextView
+                            android:id="@+id/temp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="30"
                             android:textSize="20dp"
+                            android:visibility="visible"
                             android:layout_marginLeft="8dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="C"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="3dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="3dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="분해도"
-                            android:textSize="15dp" />
-                        <TextView
+                        <EditText
+                            android:id="@+id/tempEt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="30"
                             android:textSize="20dp"
+                            android:visibility="invisible"
                             android:layout_marginLeft="8dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="um"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="3dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="3dp">
+                        android:text="C"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="분해도"
+                        android:textSize="15dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="무게"
-                            android:textSize="15dp" />
-                        <TextView
+                            android:id="@+id/decomp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="30"
                             android:textSize="20dp"
+                            android:visibility="visible"
                             android:layout_marginLeft="8dp"/>
-                        <TextView
+                        <EditText
+                            android:id="@+id/decompEt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="g"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="3dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                            android:text="30"
+                            android:textSize="20dp"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="8dp"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="3dp">
+                        android:text="um"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="무게"
+                        android:textSize="15dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
                         <TextView
+                            android:id="@+id/weight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="원두"
-                            android:textSize="15dp" />
+                            android:text="30"
+                            android:textSize="20dp"
+                            android:visibility="visible"
+                            android:layout_marginLeft="8dp"/>
+                        <EditText
+                            android:id="@+id/weightEt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30"
+                            android:textSize="20dp"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="8dp"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="g"
+                        android:textSize="15dp"
+                        android:layout_marginLeft="3dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원두"
+                        android:textSize="15dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
                         <TextView
+                            android:id="@+id/bean"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="푸릇푸릇"
                             android:textSize="15dp"
+                            android:visibility="visible"
                             android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="3dp">
-                        <TextView
+                        <EditText
+                            android:id="@+id/beanEt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="시간"
-                            android:textSize="15dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="05:30"
-                            android:textSize="20dp"
+                            android:text="푸릇푸릇"
+                            android:textSize="15dp"
+                            android:visibility="invisible"
                             android:layout_marginLeft="8dp"/>
-                    </LinearLayout>
-                </LinearLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간"
+                        android:textSize="15dp" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            android:id="@+id/min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="05"
+                            android:textSize="20dp"
+                            android:visibility="visible"
+                            android:layout_marginLeft="8dp"/>
+                        <EditText
+                            android:id="@+id/minEt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="05"
+                            android:textSize="20dp"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="8dp"/>
+                    </FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="3dp"/>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/second"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="33"
+                            android:textSize="20dp"
+                            android:visibility="visible"
+                            android:layout_marginLeft="3dp"/>
+                        <EditText
+                            android:id="@+id/secondEt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="33"
+                            android:textSize="20dp"
+                            android:visibility="invisible"
+                            android:layout_marginLeft="3dp"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </FrameLayout>
