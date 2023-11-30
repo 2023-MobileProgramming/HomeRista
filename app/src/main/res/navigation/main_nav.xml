@@ -72,7 +72,7 @@
 
     <fragment
         android:id="@+id/beanSettings"
-        android:name="com.coffee.homerista.RecordFragment"
+        android:name="com.coffee.homerista.extract.RecordFragment"
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" >
 
@@ -88,14 +88,14 @@
 
     <fragment
         android:id="@+id/recordFragment"
-        android:name="com.coffee.homerista.RecordFragment"
+        android:name="com.coffee.homerista.extract.RecordFragment"
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" />
 
 
     <fragment
         android:id="@+id/shopFm"
-        android:name="com.coffee.homerista.RecordFragment"
+        android:name="com.coffee.homerista.extract.RecordFragment"
         android:label="fragment_record"
         tools:layout="@layout/fragment_record" >
 
