@@ -21,6 +21,7 @@ class ShopFragment : Fragment() {
 
     private lateinit var viewModel: ShopViewModel
     private lateinit var webView: WebView
+    private var currentUrl: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,8 +36,13 @@ class ShopFragment : Fragment() {
         webSettings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
 
+        if (savedInstanceState != null) {
+            currentUrl = savedInstanceState.getString("CURRENT_URL")
+        }
+
         // 바텀 네비게이션 뷰 설정
         val shopNavi = view.findViewById<BottomNavigationView>(R.id.shop_nav)
+        shopNavi.selectedItemId = R.id.naver
         shopNavi.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.naver -> webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
@@ -51,7 +57,27 @@ class ShopFragment : Fragment() {
         //http://search.11st.co.kr/MW/search?searchKeyword=%25EC%25BB%25A4%25ED%2594%25BC&decSearchKeyword=%25EC%25BB%25A4%25ED%2594%25BC#_filterKey=1701360994476
 
         // 기본 URL 설정
+        shopNavi.selectedItemId = R.id.naver
+
+
         webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
+
+
+        val selectedItem = shopNavi.selectedItemId
+
+        /*
+        when (selectedItem) {
+            R.id.naver -> webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
+            R.id.gmarket -> webView.loadUrl("https://browse.gmarket.co.kr/search?keyword=%EC%BB%A4%ED%94%BC")
+            R.id.coupang -> webView.loadUrl("https://www.coupang.com/np/search?component=&q=%EC%BB%A4%ED%94%BC&channel=user")
+            R.id.ssg -> webView.loadUrl("https://www.ssg.com/search.ssg?target=all&query=%EC%BB%A4%ED%94%BC")
+            R.id.st11 -> webView.loadUrl("http://search.11st.co.kr/MW/search?searchKeyword=%25EC%25BB%25A4%25ED%2594%25BC&decSearchKeyword=%25EC%25BB%25A4%25ED%2594%25BC#_filterKey=1701360994476")
+            else -> webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
+        }
+        */
+
+
+
 
         // 뒤로가기 키 이벤트 처리
         webView.setOnKeyListener { _, keyCode, event ->
@@ -66,6 +92,22 @@ class ShopFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Ensure naver is selected every time the fragment is resumed
+        view?.findViewById<BottomNavigationView>(R.id.shop_nav)?.selectedItemId = R.id.naver
+    }
+
+    private fun loadUrl(url: String) {
+        currentUrl = url
+        webView.loadUrl(url)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("CURRENT_URL", webView.url)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
