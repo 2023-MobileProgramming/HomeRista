@@ -64,7 +64,9 @@ class FirstFragment : Fragment() {
 
 
 
+    /*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -72,6 +74,9 @@ class FirstFragment : Fragment() {
         val items = listOf("Item 1", "Item 2", "Item 3")
         val adapter = LinearLayoutAdapter(items)
         recyclerView.adapter = adapter
+
+        recyclerView.setVerticalScrollBarEnabled(false)
+        recyclerView.setHorizontalScrollBarEnabled(false)
 
         // 스크롤 리스너 추가 (필요한 경우)
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -81,7 +86,7 @@ class FirstFragment : Fragment() {
             }
         })
     }
-
+*/
 
 
 

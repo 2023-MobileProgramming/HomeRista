@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.coffee.homerista.R
@@ -26,12 +27,22 @@ class ShopFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_shop, container, false)
 
 
+
         //웹 뷰에 접속하기 위한 세팅과 메소드
 
         val webView = view.findViewById<WebView>(R.id.webView)
+        val webSettings: WebSettings = webView.settings
+
+
+        val newUserAgent = "Mozilla/5.0 (Linux; Android 10; Android SDK built for x86) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Mobile Safari/537.36"
+        webSettings.userAgentString = newUserAgent
+
+
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://search.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&cat_id=&frm=NVSHATC")
+        webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
+
+        // https://shoppinglive.naver.com/search/lives?query=%EC%BB%A4%ED%94%BC
         webView.setOnKeyListener { v, keyCode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_BACK) {
                 if (webView.canGoBack()) {
