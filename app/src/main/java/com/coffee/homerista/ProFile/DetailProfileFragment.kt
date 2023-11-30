@@ -1,6 +1,7 @@
 package com.coffee.homerista.ProFile
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,66 +52,33 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
         decomp = view.findViewById(R.id.decomp)
         weight = view.findViewById(R.id.weight)
         beanName = view.findViewById(R.id.bean)
-        //date = view.findViewById(R.id.)
         title = view.findViewById(R.id.title_tv)
         rating = view.findViewById(R.id.rating_tv)
         comment = view.findViewById(R.id.comment_tv)
-
-        val textViews: MutableList<TextView> = mutableListOf()
-        val editTexts: MutableList<EditText> = mutableListOf()
-        textViews.add(min)
-        textViews.add(sec)
-        textViews.add(temp)
-        textViews.add(decomp)
-        textViews.add(weight)
-        textViews.add(beanName)
-        textViews.add(title)
-        textViews.add(rating)
-        textViews.add(comment)
 
         modifyBtn = view.findViewById(R.id.modifyBtn)
         trashBtn = view.findViewById(R.id.trashBtn)
 
         bindProfileData()
         modifyBtn.setOnClickListener {
-            modifyProfile(textViews, editTexts)
-        }
-
-    }
-
-    private fun modifyProfile(textViews: MutableList<TextView>, editTexts: MutableList<EditText>) {
-        isEditable = !isEditable
-        var textArray = arrayOf<String>()
-        var count : Int = 0
-
-        if (isEditable) {
-            for (textView in textViews) {
-                val editedText = textView.text.toString()
-                textArray[count] = editedText
-                count++
+            val viewsToConvert = listOf(min, sec, temp, decomp, weight, beanName, title, rating, comment)
+            viewsToConvert.forEach { textView ->
                 val editText = EditText(context)
-                editText.setText(editedText)
+                editText.text = textView.text as Editable?
+                editText.layoutParams = textView.layoutParams
                 editText.id = textView.id
-                editText.isEnabled = true
-                editText.requestFocus()
-                val params = textView.layoutParams
-                val index = (textView.parent as ViewGroup).indexOfChild(textView)
-                (textView.parent as ViewGroup).removeView(textView)
-                (textView.parent as ViewGroup).addView(editText, index, params)
+
+                val parentLayout = textView.parent as ViewGroup
+                val index = parentLayout.indexOfChild(textView)
+                parentLayout.removeView(textView)
+                parentLayout.addView(editText, index)
+                modifyBtn.setBackgroundResource(R.drawable.check)
             }
-            modifyBtn.setBackgroundResource(R.drawable.check)
-        } else {
-            for (textView in textViews) {
-                val editedText = textArray[count]
-                count++
-                textView.text = editedText
-                textView.isEnabled = false
-                (textView.parent as ViewGroup).removeView(textView)
-                (textView.parent as ViewGroup).addView(textView)
-            }
-            modifyBtn.setBackgroundResource(R.drawable.modify)
+
         }
+
     }
+
 
     private fun bindProfileData() {
         min.text = record.min.toString()
