@@ -14,13 +14,16 @@ import com.coffee.homerista.MyApplication
 import com.coffee.homerista.data.entities.Record
 import com.coffee.homerista.repository.RecordRepository
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 class RecordViewModel(
     private val repository: RecordRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     private val _dataList = MutableLiveData<List<Record>>()
+    private val _dataByDateList = MutableLiveData<List<Record>>()
     val dataList: LiveData<List<Record>> get() = _dataList
+    val dataByDateList: LiveData<List<Record>> get() = _dataByDateList
 
     init {
         Log.d(TAG, "RecordViewModel - 생성자 호출")
@@ -32,6 +35,12 @@ class RecordViewModel(
             _dataList.value = repository.getAll()
         }
         Log.d("loadData", "데이터 로드 : ${_dataList.value?.size},  ${_dataList.value}")
+    }
+
+    fun loadDataByDate(date: LocalDate) {
+        viewModelScope.launch {
+            _dataByDateList.value = repository.getAllByDate(date)
+        }
     }
     // 데이터 추가
     fun insert(record: Record) {

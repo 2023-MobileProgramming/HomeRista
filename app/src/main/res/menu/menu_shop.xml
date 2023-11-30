@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/naver"
+        android:icon="@drawable/naver"
+        android:iconTint="#EFC3A4"
+        android:title=""/>
+
+    <item
+        android:id="@+id/coupang"
+        android:icon="@drawable/coupang"
+        android:iconTint="#EFC3A4"
+        android:title=""/>
+
+    <item
+        android:id="@+id/gmarket"
+        android:icon="@drawable/gmarket"
+        android:iconTint="#EFC3A4"
+        android:title=""/>
+
+
+
+    <item
+        android:id="@+id/ssg"
+        android:icon="@drawable/ssg"
+        android:iconTint="#EFC3A4"
+        android:title=""/>
+
+    <item
+        android:id="@+id/st11"
+        android:icon="@drawable/st11"
+        android:iconTint="#EFC3A4"
+        android:title=""/>
+
+
+
+</menu>

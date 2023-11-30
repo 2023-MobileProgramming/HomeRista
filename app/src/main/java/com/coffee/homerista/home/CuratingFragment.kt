@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.coffee.homerista.R
 
 
@@ -20,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FirstFragment.newInstance] factory method to
+ * Use the [CuratingFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 
@@ -56,7 +53,7 @@ private const val ARG_PARAM2 = "param2"
 
 
 
-class FirstFragment : Fragment() {
+class CuratingFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -122,7 +119,7 @@ class FirstFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
+            CuratingFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

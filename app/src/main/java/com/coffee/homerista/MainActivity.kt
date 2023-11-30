@@ -2,6 +2,9 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuInflater
+import android.view.View
+import android.widget.PopupMenu
 import androidx.activity.viewModels
 
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
@@ -9,10 +12,10 @@ import com.coffee.homerista.BeanSlide.BeanViewModel
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.shop.ShopFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.coffee.homerista.settings.SettingsFragment
-import com.coffee.homerista.home.FirstFragment
-import com.coffee.homerista.ProfileFragment
+import com.coffee.homerista.home.CuratingFragment
+import com.coffee.homerista.extract.ProfileFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     //record에서 사용할 ViewModel 생성
     private val recordViewModel: RecordViewModel by viewModels { RecordViewModel.Factory }
 
-    lateinit var firstFragment: FirstFragment
+    lateinit var curatingFragment: CuratingFragment
     lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var settingsFragment: SettingsFragment
     lateinit var ProfileFragment: ProfileFragment
+    lateinit var shopNavi: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        firstFragment = FirstFragment()
+        curatingFragment = CuratingFragment()
         beanSlideFragment = BeanSlideFragment.newInstance()
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
@@ -50,10 +54,10 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-        bottomNavigationView.selectedItemId = R.id.navigation_home
+        bottomNavigationView.selectedItemId = R.id.navigation_record
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fl, firstFragment)
+            .replace(R.id.fl, recordFragment)
             .commitAllowingStateLoss()
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -75,9 +79,16 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.navigation_home -> {
+                R.id.navigation_record -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, firstFragment)
+                        .replace(R.id.fl, recordFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+                R.id.navigation_curating -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, curatingFragment)
                         .commitAllowingStateLoss()
                     true
                 }
@@ -89,14 +100,14 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-
-
-                R.id.navigation_setting -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, settingsFragment)
-                        .commitAllowingStateLoss()
+                /*
+                R.id.navigation_shop -> {
+                    showShopMenu(findViewById(R.id.navigation_shop))
                     true
                 }
+                */
+
+
 
 
 
@@ -107,5 +118,16 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    private fun showShopMenu(anchor: View) {
+        val popup = PopupMenu(this, anchor)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.menu_shop, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            // 팝업 메뉴 항목 클릭 이벤트 처리
+            true
+        }
+        popup.show()
     }
 }

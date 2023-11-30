@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
@@ -22,6 +24,7 @@ class BeanEditFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //setContentView(R.layout.fragment_bean_edit)
         arguments?.let {
             bean = it.getSerializable(BEAN) as Bean
         }
@@ -39,7 +42,9 @@ class BeanEditFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val beanName: TextView = view.findViewById(R.id.beanEditName)
-        val beanCountries: TextView = view.findViewById(R.id.beanEditCountries)
+
+        val beanCountries: AutoCompleteTextView = view.findViewById(R.id.beanEditCountries)
+
         val beanProcessing: RadioGroup = view.findViewById(R.id.beanRadioGroup)
         val beanNatural: RadioButton = view.findViewById(R.id.radio_natural)
         val beanWashed: RadioButton = view.findViewById(R.id.radio_washed)
@@ -50,9 +55,15 @@ class BeanEditFragment : Fragment() {
         val beanDarkLight: SeekBar = view.findViewById(R.id.beanEditDarkLight)
         val beanCupNote: TextView = view.findViewById(R.id.beanEditCupNote)
 
+
+        val countriesArray = arrayOf("브라질","베트남","콜롬비아","인도네시아","에티오피아","온두라스","인도","페루","과테말라","우간다","멕시코","라오스","중국","니카라과","코르티부아르","코스타리카","필리핀","파푸아뉴기나","탄자니아","마다가스카르","케냐","베네수엘라","아이티","엘살바도르","타이","카메룬","콩고민주공화국","대한민국","미국","일본","가나")
+        val adapter = ArrayAdapter(requireContext(), R.layout.custom_fragment_bean_edit, countriesArray)
+
+        beanCountries.setAdapter(adapter)
+
         if(bean != null) {
             beanName.text = bean!!.name
-            beanCountries.text = bean!!.countries
+            beanCountries.setText(bean!!.countries, false)
             beanBody.progress = bean!!.body
             beanSweetSalty.progress = bean!!.sweetSalty
             beanBitterSour.progress = bean!!.bitterSour
@@ -64,6 +75,10 @@ class BeanEditFragment : Fragment() {
                 "내추럴" -> beanProcessing.check(beanNatural.id)
                 "블렌딩" -> beanProcessing.check(beanBlending.id)
             }
+
+            //
+
+            beanCountries.setText(bean!!.countries, false)
         }
 
         //취소버튼
@@ -101,6 +116,7 @@ class BeanEditFragment : Fragment() {
                     beanBody.progress, beanSweetSalty.progress,
                     beanBitterSour.progress, beanDarkLight.progress))
             }
+           // beanCountries.setAdapter(adapter)
 
             //이전 화면으로 돌아가기
             requireActivity().supportFragmentManager.popBackStack()

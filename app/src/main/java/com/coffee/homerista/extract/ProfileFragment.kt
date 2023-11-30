@@ -1,4 +1,4 @@
-package com.coffee.homerista
+package com.coffee.homerista.extract
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.widget.CalendarView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.coffee.homerista.R
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class ProfileFragment : Fragment() {
@@ -33,6 +34,17 @@ class ProfileFragment : Fragment() {
             // 월(month)는 0부터 시작하므로 1을 더해줍니다.
             val selectedDate = "$year-${month + 1}-$dayOfMonth"
             displayedDateTextView.text = selectedDate
+
+            //Profile view
+            //클릭시 상세페이지로 이동
+            val profileSlideFragment = ProfileSlideFragment.newInstance(year,month + 1, dayOfMonth)
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.fl, profileSlideFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
+
         }
 
     }

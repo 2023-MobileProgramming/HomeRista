@@ -11,25 +11,38 @@
         android:id="@+id/navigation_extract"
         android:icon="@drawable/navi_extract"
         android:iconTint="#A78976"
-        android:title="extract"/>
+        android:title="extract">
+
+
+    </item>
+
+
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_record"
         android:icon="@drawable/navi_home"
         android:iconTint="#A78976"
         android:title="home"/>
 
     <item
-        android:id="@+id/navigation_shop"
-        android:icon="@drawable/navi_shop"
-        android:iconTint="#A78976"
-        android:title="shop"/>
-
-    <item
-        android:id="@+id/navigation_setting"
+        android:id="@+id/navigation_curating"
         android:icon="@drawable/navi_setting"
         android:iconTint="#A78976"
         android:title="setting"/>
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/navi_shop"
+        android:iconTint="#A78976"
+        android:title="shop">
+
+
+
+    </item>
+
+
+
+
 
 
 </menu>
