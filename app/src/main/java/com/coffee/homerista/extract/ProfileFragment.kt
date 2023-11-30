@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
 
             //Profile view
             //클릭시 상세페이지로 이동
-            val profileSlideFragment = ProfileSlideFragment.newInstance("","")
+            val profileSlideFragment = ProfileSlideFragment.newInstance(11,11, 11)
 
             // Fragment를 추가하고 트랜잭션을 커밋
             requireActivity().supportFragmentManager.beginTransaction()

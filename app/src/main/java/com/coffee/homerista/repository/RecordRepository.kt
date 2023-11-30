@@ -4,11 +4,18 @@ import com.coffee.homerista.data.dao.RecordDao
 import com.coffee.homerista.data.entities.Record
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.Date
 
 class RecordRepository(val recordDao: RecordDao) {
     suspend fun getAll(): List<Record> {
         return withContext(Dispatchers.IO) {
             recordDao.getAll()
+        }
+    }
+
+    suspend fun getAllByDate(date: Date): List<Record> {
+        return withContext(Dispatchers.IO) {
+            recordDao.loadAllByDate(date.time)
         }
     }
 
