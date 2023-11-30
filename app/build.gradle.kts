@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+<<<<<<< HEAD
     id("com.google.devtools.ksp")
 }
 
@@ -10,6 +11,16 @@ android {
 
     defaultConfig {
         applicationId = "com.coffee.homerista"
+=======
+}
+
+android {
+    namespace = "com.coffee.coffeeprince"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.coffee.coffeeprince"
+>>>>>>> c6276b5ff10ad181e0c3ff48850c8b84fdc35c66
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -34,10 +45,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+<<<<<<< HEAD
+=======
+    buildFeatures {
+        viewBinding = true
+    }
+>>>>>>> c6276b5ff10ad181e0c3ff48850c8b84fdc35c66
 }
 
 dependencies {
 
+<<<<<<< HEAD
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
@@ -75,6 +93,16 @@ dependencies {
     implementation ("androidx.activity:activity-ktx:1.8.1")
     implementation ("androidx.fragment:fragment-ktx:1.6.2")
 
+=======
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.10.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
+>>>>>>> c6276b5ff10ad181e0c3ff48850c8b84fdc35c66
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
