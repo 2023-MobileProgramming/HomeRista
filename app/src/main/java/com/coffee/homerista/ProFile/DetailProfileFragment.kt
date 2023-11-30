@@ -60,19 +60,47 @@ class DetailProfileFragment(private val record: Record) : Fragment() {
         trashBtn = view.findViewById(R.id.trashBtn)
 
         bindProfileData()
-        modifyBtn.setOnClickListener {
-            val viewsToConvert = listOf(min, sec, temp, decomp, weight, beanName, title, rating, comment)
-            viewsToConvert.forEach { textView ->
-                val editText = EditText(context)
-                editText.text = textView.text as Editable?
-                editText.layoutParams = textView.layoutParams
-                editText.id = textView.id
 
-                val parentLayout = textView.parent as ViewGroup
-                val index = parentLayout.indexOfChild(textView)
-                parentLayout.removeView(textView)
-                parentLayout.addView(editText, index)
+        val viewsToConvert = listOf(min, sec, temp, decomp, weight, beanName, title, rating, comment)
+        var isEditable = false
+
+
+        modifyBtn.setOnClickListener {
+            isEditable =! isEditable
+
+            if(isEditable) {
+                viewsToConvert.forEach { view ->
+                    if (view is TextView) {
+                        val editText = EditText(context)
+                        editText.textSize = view.textSize
+                        editText.hint = view.text
+                        editText.setText(view.text)
+                        editText.layoutParams = view.layoutParams
+                        editText.id = view.id
+
+                        val parentLayout = view.parent as ViewGroup
+                        val index = parentLayout.indexOfChild(view)
+                        parentLayout.removeView(view)
+                        parentLayout.addView(editText, index)
+                    }
+                }
                 modifyBtn.setBackgroundResource(R.drawable.check)
+            } else {
+                viewsToConvert.forEach { view ->
+                    if (view is EditText) {
+                        val textView = TextView(context)
+                        textView.textSize = view.textSize
+                        textView.text = view.text
+                        textView.layoutParams = view.layoutParams
+                        textView.id = view.id
+
+                        val parentLayout = view.parent as ViewGroup
+                        val index = parentLayout.indexOfChild(view)
+                        parentLayout.removeView(view)
+                        parentLayout.addView(textView, index)
+                    }
+                }
+                modifyBtn.setBackgroundResource(R.drawable.modify)
             }
 
         }
