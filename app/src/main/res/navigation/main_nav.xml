@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.coffee.homerista.home.FirstFragment"
+        android:name="com.coffee.homerista.home.CuratingFragment"
         android:label="fragment_first"
         tools:layout="@layout/activity_main" >
 

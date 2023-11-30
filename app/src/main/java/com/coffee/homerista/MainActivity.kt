@@ -14,7 +14,7 @@ import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.coffee.homerista.settings.SettingsFragment
-import com.coffee.homerista.home.FirstFragment
+import com.coffee.homerista.home.CuratingFragment
 import com.coffee.homerista.extract.ProfileFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     //record에서 사용할 ViewModel 생성
     private val recordViewModel: RecordViewModel by viewModels { RecordViewModel.Factory }
 
-    lateinit var firstFragment: FirstFragment
+    lateinit var curatingFragment: CuratingFragment
     lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        firstFragment = FirstFragment()
+        curatingFragment = CuratingFragment()
         beanSlideFragment = BeanSlideFragment.newInstance()
         shopFragment = ShopFragment()
         extractFragment = ExtractFragment()
@@ -54,10 +54,10 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-        bottomNavigationView.selectedItemId = R.id.navigation_home
+        bottomNavigationView.selectedItemId = R.id.navigation_record
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fl, firstFragment)
+            .replace(R.id.fl, recordFragment)
             .commitAllowingStateLoss()
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -79,9 +79,16 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.navigation_home -> {
+                R.id.navigation_record -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, firstFragment)
+                        .replace(R.id.fl, recordFragment)
+                        .commitAllowingStateLoss()
+                    true
+                }
+
+                R.id.navigation_curating -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fl, curatingFragment)
                         .commitAllowingStateLoss()
                     true
                 }
@@ -101,13 +108,6 @@ class MainActivity : AppCompatActivity() {
                 */
 
 
-
-                R.id.navigation_setting -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fl, settingsFragment)
-                        .commitAllowingStateLoss()
-                    true
-                }
 
 
 
