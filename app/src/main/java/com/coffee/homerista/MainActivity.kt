@@ -2,6 +2,9 @@ package com.coffee.homerista
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuInflater
+import android.view.View
+import android.widget.PopupMenu
 import androidx.activity.viewModels
 
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var settingsFragment: SettingsFragment
     lateinit var ProfileFragment: ProfileFragment
+    lateinit var shopNavi: BottomNavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,6 +93,13 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
+                /*
+                R.id.navigation_shop -> {
+                    showShopMenu(findViewById(R.id.navigation_shop))
+                    true
+                }
+                */
+
 
 
                 R.id.navigation_setting -> {
@@ -107,5 +118,16 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    private fun showShopMenu(anchor: View) {
+        val popup = PopupMenu(this, anchor)
+        val inflater: MenuInflater = popup.menuInflater
+        inflater.inflate(R.menu.menu_shop, popup.menu)
+        popup.setOnMenuItemClickListener { menuItem ->
+            // 팝업 메뉴 항목 클릭 이벤트 처리
+            true
+        }
+        popup.show()
     }
 }
