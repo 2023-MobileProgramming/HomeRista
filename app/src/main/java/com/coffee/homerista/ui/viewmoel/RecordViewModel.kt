@@ -14,7 +14,7 @@ import com.coffee.homerista.MyApplication
 import com.coffee.homerista.data.entities.Record
 import com.coffee.homerista.repository.RecordRepository
 import kotlinx.coroutines.launch
-import java.util.Date
+import java.time.LocalDate
 
 class RecordViewModel(
     private val repository: RecordRepository,
@@ -37,7 +37,7 @@ class RecordViewModel(
         Log.d("loadData", "데이터 로드 : ${_dataList.value?.size},  ${_dataList.value}")
     }
 
-    fun loadDataByDate(date: Date) {
+    fun loadDataByDate(date: LocalDate) {
         viewModelScope.launch {
             _dataByDateList.value = repository.getAllByDate(date)
         }
