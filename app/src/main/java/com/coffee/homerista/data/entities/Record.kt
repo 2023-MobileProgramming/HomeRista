@@ -3,7 +3,7 @@ package com.coffee.homerista.data.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.io.Serializable
-import java.util.Date
+import java.time.LocalDate
 
 @Entity
 data class Record (
@@ -13,7 +13,7 @@ data class Record (
     var decomp: Double,
     var weight: Double,
     var beanName: String,
-    var date: Date,
+    var date: LocalDate,
     var title: String,
     var rating: Int,
     var comment: String

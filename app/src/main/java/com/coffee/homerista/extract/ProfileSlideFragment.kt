@@ -1,54 +1,59 @@
 package com.coffee.homerista.extract
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.coffee.homerista.ProFile.DetailProfileFragment
 import com.coffee.homerista.R
-import com.coffee.homerista.data.entities.Bean
+import com.coffee.homerista.data.entities.Record
+import com.coffee.homerista.ui.viewmoel.RecordViewModel
+import java.time.LocalDate
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val YEAR = "year"
+private const val MONTH = "month"
+private const val DAY = "day"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileSlideFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileSlideFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var year: Int? = null
+    private var month: Int? = null
+    private var day: Int? = null
+
+    private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory}
+
     private lateinit var viewPager: ViewPager2
     private lateinit var viewGroup: ViewGroup
-
     private lateinit var layout: FrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            year = it.getInt(YEAR)
+            month = it.getInt(MONTH)
+            day = it.getInt(DAY)
         }
     }
 
+    @SuppressLint("NewApi")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         viewGroup =  inflater.inflate(R.layout.fragment_profile_slide, container, false) as ViewGroup
-
+        Log.d("date", "${year}, ${month}, ${day}")
+        viewModel.loadDataByDate(LocalDate.of(year ?: 0, month ?: 0, day ?: 0))
         viewPageInit()
+        observeData()
         return viewGroup
     }
 
@@ -85,45 +90,48 @@ class ProfileSlideFragment : Fragment() {
 
     private fun Int.dpToPx(displayMetrics: DisplayMetrics): Int = (this * displayMetrics.density).toInt()
 
+    private fun observeData() {
+        // LiveData를 관찰하고 데이터가 변경될 때마다 호출되는 observe 메서드
+        viewModel.dataByDateList.observe(viewLifecycleOwner) { dataList ->
+            // 데이터가 변경되었을 때 화면 업데이트 등의 작업 수행
+            // 예: pagerAdapter에 새로운 데이터 설정
+            Log.d("로그", "${dataList} 변화 감지")
+            Log.d("로그", "${dataList.size} 변화 감지")
+            val pagerAdapter = viewPager.adapter as? ProfileSlideFragment.ScreenSlidePagerAdapter
+            pagerAdapter?.setDataList(dataList)
+        }
+    }
 
     private inner class ScreenSlidePagerAdapter(fg: Fragment) : FragmentStateAdapter(fg) {
-        private var dataList: List<Bean> = emptyList()
-//        @SuppressLint("NotifyDataSetChanged")
-//        fun setDataList(newList: List<Bean>) {
-//            dataList = newList
-//            notifyDataSetChanged()
-//        }
+        private var dataList: List<Record> = emptyList()
+        @SuppressLint("NotifyDataSetChanged")
+        fun setDataList(newList: List<Record>) {
+            dataList = newList
+            notifyDataSetChanged()
+        }
 
-        override fun getItemCount(): Int = 5
+        override fun getItemCount(): Int = dataList.size
 
         override fun createFragment(position: Int): Fragment = DetailProfileFragment()
 
-//        override fun getItemId(position: Int): Long {
-//            return dataList[position].id.toLong()
-//        }
-//
-//        override fun containsItem(itemId: Long): Boolean {
-//            return dataList.any { bean -> bean.id.toLong() == itemId }
-//        }
+        override fun getItemId(position: Int): Long {
+            return dataList[position].id.toLong()
+        }
+
+        override fun containsItem(itemId: Long): Boolean {
+            return dataList.any { record -> record.id.toLong() == itemId }
+        }
 
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileSlideFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(year: Int, month: Int, day: Int) =
             ProfileSlideFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(YEAR, year)
+                    putInt(MONTH, month)
+                    putInt(DAY, day)
                 }
             }
     }
