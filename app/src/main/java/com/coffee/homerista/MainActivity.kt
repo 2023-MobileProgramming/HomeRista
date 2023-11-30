@@ -12,10 +12,10 @@ import com.coffee.homerista.BeanSlide.BeanViewModel
 import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.shop.ShopFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.coffee.homerista.settings.SettingsFragment
 import com.coffee.homerista.home.FirstFragment
-import com.coffee.homerista.ProfileFragment
+import com.coffee.homerista.extract.ProfileFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class MainActivity : AppCompatActivity() {
