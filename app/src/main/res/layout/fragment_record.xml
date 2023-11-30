@@ -17,13 +17,13 @@
         android:textColor="#EFC3A4"
         android:textSize="35dp" />
 
-    <com.coffee.homerista.extract.CircleBar
+    <ProgressBar
         android:id="@+id/circleBar"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="52dp"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
     <Button
         android:id="@+id/cameraBtn"
@@ -102,7 +102,7 @@
                     android:id="@+id/tv_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="온도"
+                    android:text="temperature"
                     android:textColor="#533B30"
                     android:textSize="15dp"
                     android:layout_marginLeft="5dp"
@@ -147,7 +147,7 @@
                     android:id="@+id/tv_decomp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="분해도"
+                    android:text="decomposition"
                     android:textColor="#533B30"
                     android:textSize="15dp"
                     android:layout_marginLeft="5dp"
@@ -191,7 +191,7 @@
                     android:id="@+id/tv_weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="무게"
+                    android:text="weight"
                     android:textColor="#533B30"
                     android:textSize="15dp"
                     android:layout_marginLeft="5dp"
@@ -235,7 +235,7 @@
                     android:id="@+id/tv_bean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="원두"
+                    android:text="bean"
                     android:textColor="#533B30"
                     android:textSize="15dp"
                     android:layout_marginLeft="5dp"
