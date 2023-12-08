@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*
         val inflater = layoutInflater
         val layout = inflater.inflate(R.layout.custom_message, null)
 
@@ -49,11 +48,11 @@ class MainActivity : AppCompatActivity() {
         text.text = "환영합니다"
 
         // 토스트 생성 및 표시
-        val toast = Toast(applicationContext)
-        toast.duration = Toast.LENGTH_LONG
-        toast.view = layout
-        */
-        Toast.makeText(this, "환영합니다", Toast.LENGTH_LONG).show();
+        val toast = Toast(applicationContext).apply {
+            duration = Toast.LENGTH_LONG
+            view = layout
+        }
+        toast.show()
 
 
         curatingFragment = CuratingFragment()
