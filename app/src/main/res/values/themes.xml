@@ -13,4 +13,8 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowBackground">@drawable/sssss</item>
     </style>
+
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:timePickerStyle">@style/MyTimePickerStyle</item>
+    </style>
 </resources>

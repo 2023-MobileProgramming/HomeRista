@@ -1,6 +1,8 @@
 package com.coffee.homerista.ui.viewmoel
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
@@ -16,6 +18,7 @@ import com.coffee.homerista.repository.RecordRepository
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
+@RequiresApi(Build.VERSION_CODES.O)
 class RecordViewModel(
     private val repository: RecordRepository,
     private val savedStateHandle: SavedStateHandle
@@ -28,6 +31,7 @@ class RecordViewModel(
     init {
         Log.d(TAG, "RecordViewModel - 생성자 호출")
         loadData()
+        loadDataByDate(LocalDate.of(2023,11,30))
     }
 
     private fun loadData() {
@@ -47,6 +51,7 @@ class RecordViewModel(
         viewModelScope.launch {
             repository.insert(record)
             loadData() // 데이터가 추가되었으므로 다시 데이터를 로드
+            loadDataByDate(record.date)
         }
     }
 
@@ -55,6 +60,7 @@ class RecordViewModel(
         viewModelScope.launch {
             repository.update(record)
             loadData() // 데이터가 수정되었으므로 다시 데이터를 로드
+            loadDataByDate(record.date)
         }
     }
 
@@ -63,6 +69,7 @@ class RecordViewModel(
         viewModelScope.launch {
             repository.delete(record)
             loadData() // 데이터가 삭제되었으므로 다시 데이터를 로드
+            loadDataByDate(record.date)
         }
     }
 
