@@ -35,28 +35,31 @@
         android:layout_margin="5dp"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/startBtn"
             android:layout_width="90dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
             android:backgroundTint="#533B30"
+            android:textColor="@color/white"
             android:text="start" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/resetBtn"
             android:layout_width="90dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
             android:backgroundTint="#533B30"
+            android:textColor="@color/white"
             android:text="reset" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBtn"
             android:layout_width="90dp"
             android:layout_height="50dp"
             android:layout_margin="4dp"
             android:backgroundTint="#533B30"
+            android:textColor="@color/white"
             android:text="save" />
 
     </LinearLayout>
