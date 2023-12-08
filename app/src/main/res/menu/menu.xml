@@ -28,7 +28,7 @@
         android:id="@+id/navigation_curating"
         android:icon="@drawable/navi_setting"
         android:iconTint="#A78976"
-        android:title="setting"/>
+        android:title="curating"/>
 
     <item
         android:id="@+id/navigation_shop"

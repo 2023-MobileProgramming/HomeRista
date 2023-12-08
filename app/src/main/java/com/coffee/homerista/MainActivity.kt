@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.MenuInflater
 import android.view.View
 import android.widget.PopupMenu
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
@@ -37,6 +39,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        /*
+        val inflater = layoutInflater
+        val layout = inflater.inflate(R.layout.custom_message, null)
+
+        // 텍스트 설정
+        val text = layout.findViewById<TextView>(R.id.custom_message_text)
+        text.text = "환영합니다"
+
+        // 토스트 생성 및 표시
+        val toast = Toast(applicationContext)
+        toast.duration = Toast.LENGTH_LONG
+        toast.view = layout
+        */
+        Toast.makeText(this, "환영합니다", Toast.LENGTH_LONG).show();
 
 
         curatingFragment = CuratingFragment()
