@@ -1,4 +1,4 @@
-package com.coffee.homerista.extract
+package com.coffee.homerista.ProFile
 
 import android.os.Bundle
 import android.util.Log
@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
 
             //Profile view
             //클릭시 상세페이지로 이동
-            val profileSlideFragment = ProfileSlideFragment.newInstance(year,month + 1, dayOfMonth)
+            val profileSlideFragment = ProfileSlideFragment.newInstance(year, month + 1, dayOfMonth)
 
             // Fragment를 추가하고 트랜잭션을 커밋
             requireActivity().supportFragmentManager.beginTransaction()

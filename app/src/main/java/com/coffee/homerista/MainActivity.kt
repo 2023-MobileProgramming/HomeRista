@@ -9,13 +9,12 @@ import androidx.activity.viewModels
 
 import com.coffee.homerista.BeanSlide.BeanSlideFragment
 import com.coffee.homerista.BeanSlide.BeanViewModel
-import com.coffee.homerista.extract.ExtractFragment
 import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.shop.ShopFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.coffee.homerista.settings.SettingsFragment
 import com.coffee.homerista.home.CuratingFragment
-import com.coffee.homerista.extract.ProfileFragment
+import com.coffee.homerista.ProFile.ProfileFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var beanSlideFragment: BeanSlideFragment
     lateinit var shopFragment: ShopFragment
     lateinit var recordFragment: RecordFragment
-    lateinit var extractFragment: ExtractFragment
     lateinit var bottomNavigationView: BottomNavigationView
     lateinit var settingsFragment: SettingsFragment
     lateinit var ProfileFragment: ProfileFragment
@@ -44,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         curatingFragment = CuratingFragment()
         beanSlideFragment = BeanSlideFragment.newInstance()
         shopFragment = ShopFragment()
-        extractFragment = ExtractFragment()
         settingsFragment = SettingsFragment()
         ProfileFragment = ProfileFragment()
 
