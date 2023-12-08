@@ -1,6 +1,7 @@
 package com.coffee.homerista.extract
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -37,6 +38,7 @@ class ProfileSlideFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var viewGroup: ViewGroup
     private lateinit var layout: FrameLayout
+
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
