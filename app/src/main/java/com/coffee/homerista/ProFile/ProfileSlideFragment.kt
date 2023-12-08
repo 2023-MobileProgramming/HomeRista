@@ -1,4 +1,4 @@
-package com.coffee.homerista.extract
+package com.coffee.homerista.ProFile
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -13,7 +13,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.coffee.homerista.ProFile.DetailProfileFragment
 import com.coffee.homerista.R
 import com.coffee.homerista.data.entities.Record
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
@@ -23,12 +22,14 @@ private const val YEAR = "year"
 private const val MONTH = "month"
 private const val DAY = "day"
 
+
+
 class ProfileSlideFragment : Fragment() {
     private var year: Int? = null
     private var month: Int? = null
     private var day: Int? = null
 
-    private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory}
+    private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory }
 
     private lateinit var viewPager: ViewPager2
     private lateinit var viewGroup: ViewGroup
@@ -112,7 +113,8 @@ class ProfileSlideFragment : Fragment() {
 
         override fun getItemCount(): Int = dataList.size
 
-        override fun createFragment(position: Int): Fragment = DetailProfileFragment(dataList[position])
+        override fun createFragment(position: Int): Fragment =
+            DetailProfileFragment(dataList[position])
 
         override fun getItemId(position: Int): Long {
             return dataList[position].id.toLong()

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7533B30"
-    tools:context=".extract.ProfileSlideFragment">
+    tools:context=".ProFile.ProfileSlideFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

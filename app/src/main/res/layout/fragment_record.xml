@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="830dp"
+    android:layout_height="808dp"
     android:background="@drawable/record_backimage"
     android:orientation="vertical"
     tools:context=".extract.RecordFragment">
@@ -21,233 +21,77 @@
     <Chronometer
         android:id="@+id/timer"
         android:layout_width="match_parent"
-        android:layout_gravity="center_vertical"
         android:layout_height="60dp"
-        android:textColor="#533B30"
-        android:layout_marginTop="240dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="250dp"
         android:gravity="center"
+        android:textColor="#533B30"
         android:textSize="35dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
-        android:layout_margin="5dp"
+        android:layout_margin="20dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/startBtn"
+            android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:layout_margin="4dp"
             android:backgroundTint="#533B30"
-            android:textColor="@color/white"
             android:text="start" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/resetBtn"
+            android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:layout_margin="4dp"
             android:backgroundTint="#533B30"
-            android:textColor="@color/white"
             android:text="reset" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveBtn"
+            android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:layout_margin="4dp"
             android:backgroundTint="#533B30"
-            android:textColor="@color/white"
             android:text="save" />
 
     </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/information_ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="3dp"
-        android:gravity="center">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:padding="1dp">
-
-                <ImageView
-                    android:id="@+id/iv_temp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/record_temperature"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_temp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="temperature"
-                    android:textColor="#533B30"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="5dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_temp"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/et_temp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="온도입력"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="C"
-                    android:layout_marginLeft="3dp"
-                    android:textColor="#EFC3A4"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/et_temp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:padding="1dp">
-
-                <ImageView
-                    android:id="@+id/iv_decomp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/record_decomposition"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_decomp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="decomposition"
-                    android:textColor="#533B30"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="5dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_decomp"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/et_decomp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분해도입력"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_decomp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="um"
-                    android:layout_marginLeft="3dp"
-                    android:textColor="#EFC3A4"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/et_decomp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:padding="1dp">
-
-                <ImageView
-                    android:id="@+id/iv_weight"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/record_weight"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="weight"
-                    android:textColor="#533B30"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="5dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_weight"/>
-
-                <EditText
-                    android:id="@+id/et_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="무게입력"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_weight" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="g"
-                    android:layout_marginLeft="3dp"
-                    android:textColor="#EFC3A4"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/et_weight" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:padding="1dp">
-
-                <ImageView
-                    android:id="@+id/iv_bean"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/record_bean"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/tv_bean"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="bean"
-                    android:textColor="#533B30"
-                    android:textSize="15dp"
-                    android:layout_marginLeft="5dp"
-                    app:layout_constraintStart_toEndOf="@id/iv_bean"/>
-
-                <EditText
-                    android:id="@+id/et_bean"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="원두입력"
-                    android:textSize="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_bean" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/recordBtn"
+        android:id="@+id/recordBtn1"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#533B30"
         android:textColor="@color/white"
-        android:text="저장하기" />
+        android:layout_margin="20dp"
+        android:text="추출 정보를 입력하세요" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/recordBtn2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#533B30"
+        android:textColor="@color/white"
+        android:layout_margin="15dp"
+        android:text="추출 후기를 남겨볼까요" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/recordBtn3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#533B30"
+        android:layout_margin="15dp"
+        android:textColor="@color/white"
+        android:text="프로파일에 넣어보아요" />
 
 </LinearLayout>

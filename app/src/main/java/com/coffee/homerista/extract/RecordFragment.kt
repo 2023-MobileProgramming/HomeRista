@@ -26,7 +26,7 @@ class RecordFragment : Fragment() {
         var resetBtn: Button = recordView.findViewById(R.id.resetBtn)
         var saveBtn: Button = recordView.findViewById(R.id.saveBtn)
         var timer: Chronometer = recordView.findViewById(R.id.timer)
-        var recordBtn: Button = recordView.findViewById(R.id.recordBtn)
+        var recordBtn2: Button = recordView.findViewById(R.id.recordBtn2)
         var recordTime: Long = 0
         var pauseTime = 0L
 
@@ -50,13 +50,13 @@ class RecordFragment : Fragment() {
 
         saveBtn.setOnClickListener {
             startBtn.isEnabled = false
-            resetBtn.isEnabled = false
+            resetBtn.isEnabled = true
             timer.stop()
             recordTime = SystemClock.elapsedRealtime() - timer.base
 
         }
 
-        recordBtn.setOnClickListener {
+        recordBtn2.setOnClickListener {
             showRecordDialog()
         }
         return recordView
