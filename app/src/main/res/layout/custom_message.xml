@@ -4,14 +4,25 @@
     android:layout_height="wrap_content"
     android:background="#533B30"
     android:padding="10dp"
+    android:orientation="horizontal"
     android:id="@+id/custom_toast_container">
+
+    <ImageView
+        android:id="@+id/custom_message_icon"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:src="@drawable/homerista_icon2"
+        android:layout_marginEnd="10dp"/>
 
     <TextView
         android:id="@+id/custom_message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:textColor="#EFC3A4"
-        android:textSize="16sp" />
+        android:textSize="22sp" />
+
+
 
 
 </LinearLayout>
