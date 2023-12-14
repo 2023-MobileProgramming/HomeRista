@@ -29,9 +29,10 @@ private const val DAY = "day"
 
 @RequiresApi(Build.VERSION_CODES.O)
 class ProfileSlideFragment : Fragment() {
-    private var year: Int? = null
-    private var month: Int? = null
-    private var day: Int? = null
+    private val now = LocalDate.now()
+    private var year: Int = now.year
+    private var month: Int = now.monthValue
+    private var day: Int = now.dayOfMonth
 
     private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory}
 
@@ -48,7 +49,8 @@ class ProfileSlideFragment : Fragment() {
             month = it.getInt(MONTH)
             day = it.getInt(DAY)
         }
-        viewModel.loadDataByDate(LocalDate.of(year ?: 0, month ?: 0, day ?: 0))
+
+        viewModel.loadDataByDate(LocalDate.of(year, month, day))
     }
 
     @SuppressLint("NewApi")
@@ -59,7 +61,7 @@ class ProfileSlideFragment : Fragment() {
         // Inflate the layout for this fragment
         viewGroup =  inflater.inflate(R.layout.fragment_profile_slide, container, false) as ViewGroup
         Log.d("date", "${year}, ${month}, ${day}")
-        viewModel.loadDataByDate(LocalDate.of(year ?: 0, month ?: 0, day ?: 0))
+        viewModel.loadDataByDate(LocalDate.of(year, month, day))
         observeData()
         viewPageInit()
         return viewGroup
