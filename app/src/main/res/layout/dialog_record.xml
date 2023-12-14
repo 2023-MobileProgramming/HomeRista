@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="커피를 기억하고 싶다면\n프로파일을 저장해주세요!"
+        android:fontFamily="@font/font1"
         android:textSize="15dp"
         android:textColor="#533B30"
         android:layout_gravity="center"
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="제목"
+        android:fontFamily="@font/font2"
         android:textColor="#533B30"
         android:textSize="12dp"
         android:layout_marginLeft="10dp"/>
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="추출 평가"
         android:textSize="12dp"
+        android:fontFamily="@font/font2"
         android:textColor="#533B30"
         android:layout_marginLeft="10dp"/>
 
@@ -86,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="한줄평"
+        android:fontFamily="@font/font2"
         android:textSize="12dp"
         android:layout_marginLeft="10dp"/>
     <EditText
@@ -107,6 +111,7 @@
             android:layout_gravity="right"
             android:backgroundTint="#533B30"
             android:text="취소"
+            android:fontFamily="@font/font2"
             android:textColor="#F6E9DA"
             android:textSize="12dp" />
 
@@ -115,6 +120,7 @@
             android:layout_width="67dp"
             android:layout_height="40dp"
             android:text="저장"
+            android:fontFamily="@font/font2"
             android:textColor="#F6E9DA"
             android:textSize="12dp"
             android:backgroundTint="#533B30"

@@ -38,9 +38,9 @@
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
-                        android:background="@drawable/profile_coffee3"
+                        android:background="@drawable/profile_coffee"
                         android:paddingRight="20sp"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitCenter"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +68,7 @@
                         android:layout_marginTop="4dp"
                         android:paddingLeft="10sp"
                         android:text="제목"
+                        android:fontFamily="@font/font2"
                         android:textColor="#543522"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -76,8 +77,6 @@
 
                     <RatingBar
                         android:id="@+id/profileRating"
-                        android:scaleX="0.9"
-                        android:scaleY="0.9"
                         android:layout_width="240dp"
                         android:layout_height="60dp"
                         android:paddingLeft="5sp"
@@ -326,7 +325,7 @@
                             android:id="@+id/imageView_ed"
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
-                            android:background="@drawable/profile_coffee3"
+                            android:background="@drawable/profile_coffee"
                             android:paddingRight="20sp"
                             android:scaleType="fitCenter"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -366,12 +365,10 @@
 
                         <RatingBar
                             android:id="@+id/profileEditRating"
-                            android:numStars="5"
+
                             android:layout_width="240dp"
                             android:layout_height="60dp"
                             android:paddingLeft="5sp"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             app:layout_constraintStart_toStartOf="@+id/textView27_ed"
                             app:layout_constraintTop_toBottomOf="@+id/profileEditTitle" />
 
@@ -394,7 +391,7 @@
                             android:layout_height="20dp"
                             android:layout_marginStart="10dp"
                             android:text="온도"
-                            android:fontFamily="@font/font2"
+                            android:fontFamily="@font/font1"
                             android:textColor="#543522"
                             app:layout_constraintEnd_toEndOf="@+id/textView_ed"
                             app:layout_constraintStart_toEndOf="@+id/profileEditRating"
@@ -428,7 +425,7 @@
                             android:layout_height="20dp"
                             android:layout_marginStart="10dp"
                             android:text="분쇄도"
-                            android:fontFamily="@font/font2"
+                            android:fontFamily="@font/font1"
                             android:textColor="#543522"
                             app:layout_constraintEnd_toEndOf="@+id/textView14_ed"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -441,7 +438,7 @@
                             android:layout_height="20dp"
                             android:layout_marginStart="10dp"
                             android:text="무게"
-                            android:fontFamily="@font/font2"
+                            android:fontFamily="@font/font1"
                             android:textColor="#543522"
                             app:layout_constraintEnd_toEndOf="@+id/textView15_ed"
                             app:layout_constraintStart_toEndOf="@+id/textView36_ed"

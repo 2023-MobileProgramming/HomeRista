@@ -152,6 +152,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="25dp"
                 android:text="단맛"
+                android:fontFamily="@font/gangwon_font_bold"
                 android:textColor="#EFC3A4"
                 app:layout_constraintBottom_toTopOf="@+id/textView19"
                 app:layout_constraintStart_toStartOf="parent" />

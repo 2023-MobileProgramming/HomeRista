@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="추출한 커피 정보를\n간단히 저장해보아요"
+        android:fontFamily="@font/font1"
         android:textSize="15dp"
         android:textColor="#533B30"
         android:gravity="center"
@@ -58,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="temperature"
+                android:fontFamily="@font/font2"
                 android:textColor="#533B30"
                 android:textSize="15dp"
                 android:layout_gravity="center" />
@@ -67,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="grind size"
+                android:fontFamily="@font/font2"
                 android:layout_gravity="center"
                 android:textColor="#533B30"
                 android:textSize="15dp" />
@@ -86,6 +89,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="온도입력"
+                    android:textColor="#533B30"
+                    android:textColorHint="#997000"
+                    android:fontFamily="@font/font2"
                     android:textSize="12dp" />
 
                 <TextView
@@ -109,12 +115,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="분해입력"
+                    android:textColorHint="#997000"
+                    android:textColor="#533B30"
+                    android:fontFamily="@font/font2"
                     android:textSize="12dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="um"
+                    android:fontFamily="@font/font2"
                     android:layout_gravity="center_vertical"
                     android:textColor="#533B30"
                     android:textSize="15dp"/>
@@ -154,6 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="weight"
+                android:fontFamily="@font/font2"
                 android:textColor="#533B30"
                 android:textSize="15dp"
                 android:layout_gravity="center"/>
@@ -164,6 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="bean"
+                android:fontFamily="@font/font2"
                 android:textColor="#533B30"
                 android:textSize="15dp" />
 
@@ -181,7 +193,10 @@
                     android:id="@+id/et_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="무개입력"
+                    android:hint="무게입력"
+                    android:textColorHint="#997000"
+                    android:textColor="#533B30"
+                    android:fontFamily="@font/font2"
                     android:textSize="12dp" />
 
                 <TextView
@@ -202,6 +217,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="원두입력"
+                    android:textColorHint="#997000"
+                    android:textColor="#533B30"
+                    android:fontFamily="@font/font2"
                     android:textSize="12dp" />
 
             </LinearLayout>

@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="추출한 커피 정보를\n간단히 저장해보아요"
+        android:fontFamily="@font/gangwon_font_bold"
         android:textSize="15dp"
         android:textColor="#533B30"
         android:gravity="center"
@@ -82,6 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="온도입력"
+                    android:textColor="#533B30"
                     android:textSize="12dp" />
 
                 <TextView
@@ -105,6 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="분해입력"
+                    android:textColor="#533B30"
                     android:textSize="12dp" />
 
                 <TextView
@@ -175,7 +178,8 @@
                     android:id="@+id/et_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="무개입력"
+                    android:hint="무게입력"
+                    android:textColor="#533B30"
                     android:textSize="12dp" />
 
                 <TextView
@@ -196,6 +200,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="원두입력"
+                    android:textColor="#533B30"
                     android:textSize="12dp" />
 
             </LinearLayout>
