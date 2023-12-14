@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:gravity="center"
-    android:background="#FEDDBA">
+    android:background="#F6E9DA">
 
     <TextView
         android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
             android:layout_width="67dp"
             android:layout_height="40dp"
             android:text="취소"
-            android:textColor="#FEDDBA"
+            android:textColor="#F6E9DA"
             android:textSize="12dp"
             android:backgroundTint="#533B30" />
         <androidx.appcompat.widget.AppCompatButton
@@ -221,7 +221,7 @@
             android:layout_width="67dp"
             android:layout_height="40dp"
             android:text="저장"
-            android:textColor="#FEDDBA"
+            android:textColor="#F6E9DA"
             android:textSize="12dp"
             android:backgroundTint="#533B30" />
 

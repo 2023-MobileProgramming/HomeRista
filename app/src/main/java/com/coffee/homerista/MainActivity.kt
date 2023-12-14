@@ -47,12 +47,7 @@ class MainActivity : AppCompatActivity() {
         val text = layout.findViewById<TextView>(R.id.custom_message_text)
         text.text = "환영합니다"
 
-        // 토스트 생성 및 표시
-        val toast = Toast(applicationContext).apply {
-            duration = Toast.LENGTH_LONG
-            view = layout
-        }
-        toast.show()
+        Toast.makeText(this, "환영합니다", Toast.LENGTH_LONG).show();
 
 
         curatingFragment = CuratingFragment()

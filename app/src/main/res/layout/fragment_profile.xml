@@ -1,80 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/beanSlideFm"
     android:background="#533B30"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <ImageButton
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/profileAddButton"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginBottom="120dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bean_logo2" />
 
-        <ImageView
-            android:id="@+id/logoImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="154dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="41dp"
-            android:layout_marginTop="16dp"
-            app:srcCompat="@drawable/logo" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:background="#533B30"/>
 
-        <ImageView
-            android:id="@+id/groupImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/logoImageView"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="76dp"
-            android:layout_marginEnd="61dp"
-            app:srcCompat="@drawable/cupplus" />
+</FrameLayout>
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/logoImageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:background="#EFC3A4"/>
-
-        <!-- 선택된 날짜를 표시할 ConstraintLayout -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/calendarView"
-            android:layout_marginTop="16dp">
-
-            <!-- rectangle_46 이미지 -->
-            <ImageView
-                android:id="@+id/rectangleImageView"
-                android:layout_width="322dp"
-                android:layout_height="163dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.513"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/rectangle_46" />
-
-            <!-- displayedDateTextView -->
-            <TextView
-                android:id="@+id/displayedDateTextView"
-                android:layout_width="117dp"
-                android:layout_height="66dp"
-                app:layout_constraintBottom_toBottomOf="@+id/rectangleImageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.12"
-                app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/rectangleImageView"
-                app:layout_constraintTop_toTopOf="@+id/rectangleImageView"
-                app:layout_constraintVertical_bias="0.120000005" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </RelativeLayout>
-
-</LinearLayout>

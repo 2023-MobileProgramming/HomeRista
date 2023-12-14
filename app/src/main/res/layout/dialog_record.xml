@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="15dp"
-    android:background="#FEDDBA">
+    android:background="#F6E9DA">
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,21 +99,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:padding="5dp">
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/record_cancelBtn"
             android:layout_width="67dp"
             android:layout_height="40dp"
-            android:text="취소"
-            android:textColor="#FEDDBA"
-            android:textSize="12dp"
+            android:layout_gravity="right"
             android:backgroundTint="#533B30"
-            android:layout_gravity="right"/>
+            android:text="취소"
+            android:textColor="#F6E9DA"
+            android:textSize="12dp" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/record_saveBtn"
             android:layout_width="67dp"
             android:layout_height="40dp"
             android:text="저장"
-            android:textColor="#FEDDBA"
+            android:textColor="#F6E9DA"
             android:textSize="12dp"
             android:backgroundTint="#533B30"
             android:layout_gravity="right"/>

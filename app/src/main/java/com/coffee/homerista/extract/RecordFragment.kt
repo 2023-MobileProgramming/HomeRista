@@ -116,7 +116,7 @@ class RecordFragment : Fragment() {
     private fun showDialogInfo() {
         val dialogBuilder = AlertDialog.Builder(requireContext())
         val inflater = this.layoutInflater
-        val dialogView = inflater.inflate(R.layout.fragment_dialog_info, null)
+        val dialogView = inflater.inflate(R.layout.fragment_info, null)
         dialogBuilder.setView(dialogView)
         val dialog = dialogBuilder.create()
         dialog.show()

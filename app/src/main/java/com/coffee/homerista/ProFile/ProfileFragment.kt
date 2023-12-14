@@ -32,13 +32,13 @@ class ProfileFragment : Fragment() {
 
         // CalendarView와 TextView를 참조합니다.
         val calendarView: CalendarView = view.findViewById(R.id.calendarView)
-        val displayedDateTextView: TextView = view.findViewById(R.id.displayedDateTextView)
+        //val displayedDateTextView: TextView = view.findViewById(R.id.displayedDateTextView)
 
         // CalendarView의 날짜 선택 이벤트를 처리합니다.
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             // 월(month)는 0부터 시작하므로 1을 더해줍니다.
             val selectedDate = "$year-${month + 1}-$dayOfMonth"
-            displayedDateTextView.text = selectedDate
+            //displayedDateTextView.text = selectedDate
 
             //Profile view
             //클릭시 상세페이지로 이동
