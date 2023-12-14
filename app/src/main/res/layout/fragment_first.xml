@@ -47,18 +47,34 @@
            -->
 
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="원두 둘러보기"
-                android:textSize="30dp"
-                android:fontFamily="@font/font1"
-                android:typeface="serif"
+                android:orientation="horizontal"
                 android:gravity="left"
+                android:padding="5dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#F6E9DA"
-                android:padding="0dp" />
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/navi_bean"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="원두 추천"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/font1"
+                    android:typeface="serif"
+                    android:textColor="#F6E9DA"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,7 +84,7 @@
                 android:fontFamily="@font/font3"
                 android:typeface="serif"
                 android:gravity="left"
-                android:layout_marginTop="2dp"
+
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="#F6E9DA"
@@ -76,7 +92,7 @@
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="350dp"
                 android:paddingStart="0dp">
 
                 <LinearLayout
@@ -102,8 +118,8 @@
 
                             <ImageView
                                 android:id="@+id/coffeebean1"
-                                android:layout_width="250dp"
-                                android:layout_height="250dp"
+                                android:layout_width="230dp"
+                                android:layout_height="230dp"
                                 android:src="@drawable/coffeebean1"/>
 
                             <TextView
@@ -115,7 +131,7 @@
                                 android:textSize="22dp"
                                 android:textStyle="bold"
                                 android:textColor="#533B30"
-                                android:layout_marginTop="10dp"/>
+                                android:layout_marginTop="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -149,8 +165,8 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="250dp"
-                                android:layout_height="250dp"
+                                android:layout_width="230dp"
+                                android:layout_height="230dp"
                                 android:id="@+id/coffeebean2"
                                 android:src="@drawable/coffeebean2">
                             </ImageView>
@@ -163,7 +179,7 @@
                                 android:textSize="22dp"
                                 android:textColor="#533B30"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="10dp"/>
+                                android:layout_marginTop="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -194,8 +210,8 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="250dp"
-                                android:layout_height="250dp"
+                                android:layout_width="230dp"
+                                android:layout_height="230dp"
                                 android:id="@+id/coffeebean3"
                                 android:src="@drawable/coffeebean3">
                             </ImageView>
@@ -208,7 +224,7 @@
                                 android:textSize="22dp"
                                 android:textColor="#533B30"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="10dp"/>
+                                android:layout_marginTop="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -239,8 +255,8 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="250dp"
-                                android:layout_height="250dp"
+                                android:layout_width="230dp"
+                                android:layout_height="230dp"
                                 android:id="@+id/coffeebean4"
                                 android:src="@drawable/coffeebean4">
                             </ImageView>
@@ -253,7 +269,7 @@
                                 android:textSize="22dp"
                                 android:textColor="#533B30"
                                 android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="10dp"/>
+                                android:layout_marginTop="5dp"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -273,18 +289,33 @@
 
             </HorizontalScrollView>
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="따끈따끈 커피 소식"
-                android:textSize="30dp"
-                android:fontFamily="@font/font1"
-                android:typeface="serif"
+                android:orientation="horizontal"
                 android:gravity="left"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#F6E9DA"
-                android:padding="0dp" />
+                android:padding="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="37dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/navi_cura"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="추천 콘텐츠"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/font1"
+                    android:typeface="serif"
+                    android:textColor="#F6E9DA"
+                    android:padding="0dp" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -294,7 +325,7 @@
                 android:fontFamily="@font/font3"
                 android:typeface="serif"
                 android:gravity="left"
-                android:layout_marginTop="2dp"
+
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
                 android:textColor="#F6E9DA"
@@ -319,7 +350,7 @@
                     app:cardElevation="4dp">
 
                     <ImageView
-                        android:layout_width="280dp"
+                        android:layout_width="312dp"
                         android:layout_height="210dp"
                         android:layout_gravity="right"
                         android:layout_marginRight="140dp"
@@ -331,7 +362,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|right"
                         android:gravity="right"
-                        android:layout_marginRight="25dp"
+                        android:layout_marginRight="26dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -339,7 +370,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/font1"
                             android:gravity="right"
-                            android:text="커피 취향으로 \n보는 심리 테스트"
+                            android:text="커피 취향으로 보는\n성격 심리 테스트"
                             android:textColor="#533B30"
                             android:textSize="22dp"
                             android:textStyle="bold" />
@@ -351,9 +382,9 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/font3"
                             android:gravity="right"
-                            android:text="mbti보다 정확하다는\n커피 심리 테스트"
+                            android:text="커피에도 mbti가 있다?\n나는 어떤 커피랑 어울릴까"
                             android:textColor="#533B30"
-                            android:textSize="16dp" />
+                            android:textSize="18dp" />
                     </LinearLayout>
 
 
@@ -384,7 +415,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_gravity="center|left"
-                        android:layout_marginLeft="15dp">
+                        android:layout_marginLeft="25dp">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -407,8 +438,8 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="167dp"
+                        android:layout_height="202dp"
                         android:src="@drawable/curating1"
                         android:layout_gravity="right"
                         android:layout_marginBottom="60dp"
@@ -423,7 +454,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="right|center"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="6dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp">
 
@@ -441,13 +472,13 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_gravity="center|right"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="25dp">
 
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="건대 모프카페\n새단장했어요"
+                            android:text="건대역 모프카페\n새단장했어요"
                             android:gravity="right"
                             android:fontFamily="@font/font1"
                             android:textColor="#533B30"
@@ -467,10 +498,10 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="180dp"
-                        android:layout_height="240dp"
+                        android:layout_width="160dp"
+                        android:layout_height="233dp"
                         android:textColor="#533B30"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="0dp"
                         android:src="@drawable/content3"
                         android:layout_gravity="left"
                         android:padding="0dp">
@@ -479,18 +510,33 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="브루잉 제품 추천"
-                android:textSize="30dp"
-                android:fontFamily="@font/font1"
-                android:typeface="serif"
+                android:orientation="horizontal"
                 android:gravity="left"
-                android:layout_marginTop="60dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="#F6E9DA"
-                android:padding="0dp" />
+                android:padding="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/navi_extract"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="추천 제품"
+                    android:textSize="30dp"
+                    android:fontFamily="@font/font1"
+                    android:typeface="serif"
+                    android:textColor="#F6E9DA"
+                    android:padding="0dp" />
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
