@@ -12,7 +12,9 @@ import android.widget.Button
 import android.widget.Chronometer
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
@@ -104,11 +106,27 @@ class RecordFragment : Fragment() {
             val totalSec = recordTime / 1000
             val sec = totalSec % 60
             val min = totalSec / 60
-            var record = Record(min.toInt(), sec.toInt(), temp.text.toString().toDouble(),
+
+            if(!::temp.isInitialized || !::title.isInitialized || temp.text.isNullOrEmpty() || title.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "추출 정보랑 후기를 작성해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
+            val record = Record(min.toInt(), sec.toInt(), temp.text.toString().toDouble(),
                 decomp.text.toString().toDouble(), weight.text.toString().toDouble(), bean.text.toString(),
                 LocalDate.now(), title.text.toString(), rating.rating.toInt(), comment.text.toString())
 
             viewModel.insert(record)
+
+            val now = LocalDate.now()
+
+            val profileSlideFragment = ProfileSlideFragment.newInstance(now.year, now.monthValue, now.dayOfMonth)
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fl, profileSlideFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
         }
 
     }
@@ -121,14 +139,64 @@ class RecordFragment : Fragment() {
         val dialog = dialogBuilder.create()
         dialog.show()
 
-        val saveButton = dialog.findViewById<Button>(R.id.di_saveBtn)
-        val cancelButton = dialog.findViewById<Button>(R.id.di_cancelBtn)
+        if(::temp.isInitialized) {
+            val tmpTemp = temp.text.toString()
+            val tmpDecomp = decomp.text.toString()
+            val tmpWeight = weight.text.toString()
+            val tmpBean = bean.text.toString()
 
-        saveButton.setOnClickListener {
+            temp = dialog.findViewById(R.id.et_temp)
+            temp.setText(tmpTemp)
+            decomp = dialog.findViewById(R.id.et_decomp)
+            decomp.setText(tmpDecomp)
+            weight = dialog.findViewById(R.id.et_weight)
+            weight.setText(tmpWeight)
+            bean = dialog.findViewById(R.id.et_bean)
+            bean.setText(tmpBean)
+
+        } else {
             temp = dialog.findViewById(R.id.et_temp)
             decomp = dialog.findViewById(R.id.et_decomp)
             weight = dialog.findViewById(R.id.et_weight)
             bean = dialog.findViewById(R.id.et_bean)
+        }
+
+        val saveButton = dialog.findViewById<Button>(R.id.di_saveBtn)
+        val cancelButton = dialog.findViewById<Button>(R.id.di_cancelBtn)
+
+        saveButton.setOnClickListener {
+            if(temp.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "온도를 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+            if(!temp.text.isDigitsOnly()) {
+                Toast.makeText(requireContext(), "온도는 숫자만 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
+            if(decomp.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "분쇄도를 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+            if(!decomp.text.isDigitsOnly()) {
+                Toast.makeText(requireContext(), "분쇄도는 숫자만 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
+            if(weight.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "무개를 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+            if(!weight.text.isDigitsOnly()) {
+                Toast.makeText(requireContext(), "무개는 숫자만 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
+            if(bean.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "원두이름을 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
             dialog.cancel()
         }
 
@@ -148,10 +216,36 @@ class RecordFragment : Fragment() {
         val saveButton = dialog.findViewById<Button>(R.id.record_saveBtn)
         val cancelButton = dialog.findViewById<Button>(R.id.record_cancelBtn)
 
-        saveButton.setOnClickListener {
+        if(::title.isInitialized) {
+            val tmpTitle = title.text.toString()
+            val tmpRating = rating.rating
+            val tmpComment = comment.text.toString()
+
+            title = dialog.findViewById(R.id.et_title)
+            title.setText(tmpTitle)
+            rating = dialog.findViewById(R.id.et_rating)
+            rating.rating = tmpRating
+            comment = dialog.findViewById(R.id.et_comment)
+            comment.setText(tmpComment)
+
+        } else {
             title = dialog.findViewById(R.id.et_title)
             rating = dialog.findViewById(R.id.et_rating)
             comment = dialog.findViewById(R.id.et_comment)
+        }
+
+        saveButton.setOnClickListener {
+
+            if(title.text.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "제목을 입력해주세요!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener // 람다 함수 종료
+            }
+
+            if(comment.text.isNullOrEmpty()) {
+                println("isNull!")
+                comment.setText("")
+            }
+
             dialog.cancel()
         }
 

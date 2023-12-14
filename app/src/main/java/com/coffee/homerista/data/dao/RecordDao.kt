@@ -15,7 +15,7 @@ interface RecordDao {
     @Query("SELECT * FROM record WHERE id IN (:recordIds)")
     fun loadAllByIds(recordIds: IntArray): List<Record>
 
-    @Query("SELECT * FROM record WHERE date = :date")
+    @Query("SELECT * FROM record WHERE date = :date ORDER BY id DESC")
     fun loadAllByDate(date: Long): List<Record>
     @Insert
     fun insertAll(vararg records: Record)
