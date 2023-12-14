@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CalendarView
-import android.widget.TextView
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
 import com.coffee.homerista.extract.ProfileSlideFragment
+import com.coffee.homerista.extract.RecordFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 class ProfileFragment : Fragment() {
     private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory }
+
+    private lateinit var profileAddButton: ImageButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,8 @@ class ProfileFragment : Fragment() {
 
         Log.d("Record", "${viewModel.dataList.value}")
 
+        profileAddButton = view.findViewById(R.id.profileAddButton)
+
         // CalendarView와 TextView를 참조합니다.
         val calendarView: CalendarView = view.findViewById(R.id.calendarView)
         //val displayedDateTextView: TextView = view.findViewById(R.id.displayedDateTextView)
@@ -37,7 +42,6 @@ class ProfileFragment : Fragment() {
         // CalendarView의 날짜 선택 이벤트를 처리합니다.
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             // 월(month)는 0부터 시작하므로 1을 더해줍니다.
-            val selectedDate = "$year-${month + 1}-$dayOfMonth"
             //displayedDateTextView.text = selectedDate
 
             //Profile view
@@ -50,6 +54,16 @@ class ProfileFragment : Fragment() {
                 .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
                 .commit()
 
+        }
+
+        profileAddButton.setOnClickListener {
+            val recordFragment = RecordFragment()
+
+            // Fragment를 추가하고 트랜잭션을 커밋
+            requireActivity().supportFragmentManager.beginTransaction()
+                .add(R.id.fl, recordFragment)
+                .addToBackStack(null) // Back 버튼으로 돌아올 수 있도록 백 스택에 추가
+                .commit()
         }
 
     }
