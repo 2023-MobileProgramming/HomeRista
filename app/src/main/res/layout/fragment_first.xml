@@ -495,7 +495,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="더 완벽한 바리스타가 되는 법"
+                android:text="더 완벽한 바리스타가 되는 길"
                 android:textSize="20dp"
                 android:fontFamily="@font/font3"
                 android:typeface="serif"
@@ -532,7 +532,7 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:padding="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -551,7 +551,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -562,7 +562,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -581,13 +581,13 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:padding="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
                                 android:id="@+id/tool3"
-                                android:src="@drawable/tool3"
+                                android:src="@drawable/tool2"
                                 android:layout_marginTop="5dp">
                             </ImageView>
 
@@ -600,7 +600,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -610,7 +610,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -633,14 +633,15 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
                                 android:id="@+id/tool6"
                                 android:src="@drawable/tool6"
-                                android:layout_marginTop="5dp">
+                                android:layout_marginTop="0dp">
                             </ImageView>
                             <TextView
                                 android:layout_width="match_parent"
@@ -651,7 +652,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="0dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -662,7 +663,7 @@
                                 android:textStyle="bold"
                                 android:textColor="#533B30"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -681,25 +682,26 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="0dp"
                                 android:id="@+id/tool4"
                                 android:src="@drawable/tool4">
                             </ImageView>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="25dp"
-                                android:text="캐맥스가 자랑하는 과학적 기구"
+                                android:text="특허 과학적 드리퍼"
                                 android:fontFamily="@font/font2"
                                 android:textColor="#533B30"
                                 android:textSize="13dp"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -710,7 +712,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
