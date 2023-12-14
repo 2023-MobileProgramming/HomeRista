@@ -136,7 +136,7 @@
             android:background="@drawable/bean_card_top_shape"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/bean_image"
+            android:src="@drawable/beanbean"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
