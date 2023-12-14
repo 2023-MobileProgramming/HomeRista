@@ -19,7 +19,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:text="2023년 11월 30일"
-            android:textColor="#EFC3A4"
+            android:textColor="#F6E9DA"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"

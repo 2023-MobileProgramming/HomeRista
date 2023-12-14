@@ -14,6 +14,7 @@
         android:layout_height="50dp"
         android:layout_gravity="left"
         android:text="HomRista"
+        android:fontFamily="@font/gangwon_font_bold"
         android:textColor="#EFC3A4"
         android:textSize="35dp" />
 
@@ -23,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="center_vertical"
+        android:fontFamily="@font/font1"
         android:layout_marginTop="250dp"
         android:gravity="center"
         android:textColor="#533B30"
@@ -41,6 +43,7 @@
             android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
+            android:fontFamily="@font/font2"
             android:backgroundTint="#533B30"
             android:text="start" />
 
@@ -49,6 +52,7 @@
             android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
+            android:fontFamily="@font/font2"
             android:backgroundTint="#533B30"
             android:text="reset" />
 
@@ -57,6 +61,7 @@
             android:textColor="@color/white"
             android:layout_width="90dp"
             android:layout_height="50dp"
+            android:fontFamily="@font/font2"
             android:backgroundTint="#533B30"
             android:text="save" />
 
@@ -69,6 +74,7 @@
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#533B30"
         android:textColor="@color/white"
+        android:fontFamily="@font/font2"
         android:layout_margin="20dp"
         android:text="추출 정보를 입력하세요" />
 
@@ -78,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#533B30"
+        android:fontFamily="@font/font2"
         android:textColor="@color/white"
         android:layout_margin="15dp"
         android:text="추출 후기를 남겨볼까요" />
@@ -90,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="#533B30"
+        android:fontFamily="@font/font2"
         android:layout_margin="15dp"
         android:textColor="@color/white"
         android:text="프로파일에 넣어보아요" />
