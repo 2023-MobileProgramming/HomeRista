@@ -48,7 +48,7 @@ class ShopFragment : Fragment() {
                 R.id.naver -> webView.loadUrl("https://msearch.shopping.naver.com/search/all?query=%EC%BB%A4%ED%94%BC&frm=NVSHSRC&vertical=search")
                 R.id.gmarket -> webView.loadUrl("https://browse.gmarket.co.kr/search?keyword=%EC%BB%A4%ED%94%BC")
                 R.id.coupang -> webView.loadUrl("https://www.coupang.com/np/search?component=&q=%EC%BB%A4%ED%94%BC&channel=user")
-                R.id.ssg -> webView.loadUrl("https://www.ssg.com/search.ssg?target=all&query=%EC%BB%A4%ED%94%BC")
+                //R.id.ssg -> webView.loadUrl("https://www.ssg.com/search.ssg?target=all&query=%EC%BB%A4%ED%94%BC")
                 R.id.st11 -> webView.loadUrl("http://search.11st.co.kr/MW/search?searchKeyword=%25EC%25BB%25A4%25ED%2594%25BC&decSearchKeyword=%25EC%25BB%25A4%25ED%2594%25BC#_filterKey=1701360994476")
             }
             true

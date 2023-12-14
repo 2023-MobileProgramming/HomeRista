@@ -20,12 +20,13 @@
         android:title=""/>
 
 
-
+    <!--
     <item
         android:id="@+id/ssg"
         android:icon="@drawable/ssg"
         android:iconTint="#EFC3A4"
         android:title=""/>
+        -->
 
     <item
         android:id="@+id/st11"

@@ -1,5 +1,6 @@
-package com.coffee.homerista.extract
+package com.coffee.homerista.ProFile
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CalendarView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.coffee.homerista.R
+import com.coffee.homerista.extract.ProfileSlideFragment
 import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
+@RequiresApi(Build.VERSION_CODES.O)
 class ProfileFragment : Fragment() {
     private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory }
 
@@ -20,6 +24,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_profile, container, false) // 프래그먼트의 레이아웃을 인플레이트합니다.
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -37,7 +42,7 @@ class ProfileFragment : Fragment() {
 
             //Profile view
             //클릭시 상세페이지로 이동
-            val profileSlideFragment = ProfileSlideFragment.newInstance(year,month + 1, dayOfMonth)
+            val profileSlideFragment = ProfileSlideFragment.newInstance(year, month + 1, dayOfMonth)
 
             // Fragment를 추가하고 트랜잭션을 커밋
             requireActivity().supportFragmentManager.beginTransaction()

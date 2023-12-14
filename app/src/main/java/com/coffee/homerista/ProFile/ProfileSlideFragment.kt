@@ -1,6 +1,7 @@
 package com.coffee.homerista.extract
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -8,6 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -23,6 +27,7 @@ private const val YEAR = "year"
 private const val MONTH = "month"
 private const val DAY = "day"
 
+@RequiresApi(Build.VERSION_CODES.O)
 class ProfileSlideFragment : Fragment() {
     private var year: Int? = null
     private var month: Int? = null
@@ -34,6 +39,8 @@ class ProfileSlideFragment : Fragment() {
     private lateinit var viewGroup: ViewGroup
     private lateinit var layout: FrameLayout
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,6 +48,7 @@ class ProfileSlideFragment : Fragment() {
             month = it.getInt(MONTH)
             day = it.getInt(DAY)
         }
+        viewModel.loadDataByDate(LocalDate.of(year ?: 0, month ?: 0, day ?: 0))
     }
 
     @SuppressLint("NewApi")
@@ -52,15 +60,24 @@ class ProfileSlideFragment : Fragment() {
         viewGroup =  inflater.inflate(R.layout.fragment_profile_slide, container, false) as ViewGroup
         Log.d("date", "${year}, ${month}, ${day}")
         viewModel.loadDataByDate(LocalDate.of(year ?: 0, month ?: 0, day ?: 0))
-        viewPageInit()
         observeData()
+        viewPageInit()
         return viewGroup
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         layout = view.findViewById(R.id.profileSlideLayout)
+        val date = view.findViewById<TextView>(R.id.recordDate)
+        date.text = year.toString() + "년 " + month.toString() + "월 " + day.toString() + "일"
+
+        //데이터가 없으면 토스트 후 종료
+        if(viewModel.dataByDateList.value?.isEmpty() != false) {
+            Toast.makeText(requireContext(), "기록된 프로파일이 없습니다. 다른 날짜를 선택해 주세요.", Toast.LENGTH_SHORT).show()
+            requireActivity().supportFragmentManager.popBackStack()
+        }
 
         //레이아웃 눌렀을 때 뒤로 가기
         layout.setOnClickListener {
@@ -103,7 +120,7 @@ class ProfileSlideFragment : Fragment() {
     }
 
     private inner class ScreenSlidePagerAdapter(fg: Fragment) : FragmentStateAdapter(fg) {
-        private var dataList: List<Record> = emptyList()
+        private var dataList: List<Record> = viewModel.dataByDateList.value?: emptyList()
         @SuppressLint("NotifyDataSetChanged")
         fun setDataList(newList: List<Record>) {
             dataList = newList
@@ -112,7 +129,9 @@ class ProfileSlideFragment : Fragment() {
 
         override fun getItemCount(): Int = dataList.size
 
-        override fun createFragment(position: Int): Fragment = DetailProfileFragment(dataList[position])
+        override fun createFragment(position: Int): Fragment {
+            return DetailProfileFragment.newInstance(dataList[position])
+        }
 
         override fun getItemId(position: Int): Long {
             return dataList[position].id.toLong()
