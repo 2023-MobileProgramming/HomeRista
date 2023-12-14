@@ -13,7 +13,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="left"
-        android:text="HomRista"
+        android:text=""
         android:fontFamily="@font/gangwon_font_bold"
         android:textColor="#EFC3A4"
         android:textSize="35dp" />

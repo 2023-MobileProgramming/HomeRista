@@ -19,5 +19,16 @@
         <item name="android:textColor">@android:color/holo_red_light</item>
     </style>
 
+    <style name="CustomRatingBar2" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/active_rating_color</item> <!-- 활성화된 별의 색상 -->
+        <item name="colorControlNormal">@color/inactive_rating_color</item> <!-- 비활성화된 별의 색상 -->
+    </style>
+
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:maxHeight">48dp</item>
+    </style>
+
 
 </resources>

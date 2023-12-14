@@ -363,9 +363,9 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView_ed" />
 
-                        <RatingBar
+                        <androidx.appcompat.widget.AppCompatRatingBar
                             android:id="@+id/profileEditRating"
-
+                            style="@style/CustomRatingBar2"
                             android:layout_width="240dp"
                             android:layout_height="60dp"
                             android:paddingLeft="5sp"
