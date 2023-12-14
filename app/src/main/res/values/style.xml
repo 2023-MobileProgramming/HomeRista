@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="BeanSeekBar" parent="Widget.AppCompat.SeekBar">
-        <item name="android:progressBackgroundTint">#EFC3A4</item>
-        <item name="android:progressTint">#EFC3A4</item>
+        <item name="android:progressBackgroundTint">#F6E9DA</item>
+        <item name="android:progressTint">#F6E9DA</item>
         <item name="android:thumbTint">#0E0504</item>
     </style>
 
     <style name="BeanRadioButton" parent="Theme.AppCompat.Light">
-        <item name="colorAccent">#EFC3A4</item>
-        <item name="colorControlNormal">#EFC3A4</item>
+        <item name="colorAccent">#F6E9DA</item>
+        <item name="colorControlNormal">#F6E9DA</item>
     </style>
 
     <style name="MyTimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
@@ -17,6 +17,17 @@
 
     <style name="DatePickerTheme.ButtonBarNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="CustomCalendarStyle" parent="android:Widget.CalendarView">
+        <!-- 캘린더의 텍스트 색상 -->
+        <item name="android:textColor">#F6E9DA</item>
+        <!-- 캘린더의 배경색 -->
+        <item name="android:background">#F7533B30</item>
+        <!-- 선택된 날짜의 색상 -->
+        <item name="android:selectedWeekBackgroundColor">#FFFFFF</item>
+        <!-- 기타 속성들 -->
+        <!-- ... -->
     </style>
 
     <style name="CustomRatingBar2" parent="Theme.AppCompat.Light">

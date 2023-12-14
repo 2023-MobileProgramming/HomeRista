@@ -4,19 +4,19 @@
     <item
         android:id="@+id/naver"
         android:icon="@drawable/naver"
-        android:iconTint="#EFC3A4"
+        android:iconTint="#F6E9DA"
         android:title=""/>
 
     <item
         android:id="@+id/coupang"
         android:icon="@drawable/coupang"
-        android:iconTint="#EFC3A4"
+        android:iconTint="#F6E9DA"
         android:title=""/>
 
     <item
         android:id="@+id/gmarket"
         android:icon="@drawable/gmarket"
-        android:iconTint="#EFC3A4"
+        android:iconTint="#F6E9DA"
         android:title=""/>
 
 
@@ -31,7 +31,7 @@
     <item
         android:id="@+id/st11"
         android:icon="@drawable/st11"
-        android:iconTint="#EFC3A4"
+        android:iconTint="#F6E9DA"
         android:title=""/>
 
 

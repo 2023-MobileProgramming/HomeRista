@@ -4,6 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brown">#EFC3A4</color>
 
-    <color name="active_rating_color">#FFCC00</color> <!-- 활성화된 별의 색상 -->
+    <color name="active_rating_color">#0E0504</color> <!-- 활성화된 별의 색상 -->
     <color name="inactive_rating_color">#CCCCCC</color>
 </resources>

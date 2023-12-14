@@ -20,8 +20,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
             android:text="바디감"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/textView7"
             app:layout_constraintStart_toStartOf="@+id/beanImage" />
 
@@ -42,8 +42,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
             android:text="단맛"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="@+id/beanImage" />
 
@@ -53,8 +53,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
             android:text="짠맛"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="@+id/beanImage" />
 
@@ -76,8 +76,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
             android:text="쓴맛"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintStart_toStartOf="@+id/beanImage" />
 
@@ -87,8 +87,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="10dp"
             android:text="산미"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toEndOf="@+id/beanImage" />
 
@@ -109,8 +109,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="20dp"
             android:text="강배전"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/beanImage"
             app:layout_constraintStart_toStartOf="@+id/beanImage" />
 
@@ -121,8 +121,8 @@
             android:layout_height="20dp"
             android:layout_marginBottom="20dp"
             android:text="약배전"
-            android:fontFamily="@font/gangwon_font_bold"
-            android:textColor="#EFC3A4"
+            android:fontFamily="@font/font2"
+            android:textColor="#F6E9DA"
             app:layout_constraintBottom_toTopOf="@+id/beanImage"
             app:layout_constraintEnd_toEndOf="@+id/beanImage" />
 
@@ -167,9 +167,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="18dp"
                     android:text="원두 이름"
-                    android:fontFamily="@font/gangwon_font_bold"
+                    android:fontFamily="@font/font1"
                     android:textSize="20dp"
                     android:textColor="#1E130E"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -182,9 +182,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="원두 나라"
-                    android:fontFamily="@font/gangwon_font_bold"
-                    android:textSize="13dp"
+                    android:fontFamily="@font/font2"
+                    android:textSize="15dp"
                     android:textColor="#1E130E"
+                    android:layout_marginBottom="27dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
