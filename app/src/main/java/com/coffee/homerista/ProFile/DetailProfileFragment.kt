@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
@@ -23,14 +24,17 @@ import com.coffee.homerista.ui.viewmoel.RecordViewModel
 
 
 private const val RECORD = "record"
+private const val POSITION = "position"
 @RequiresApi(Build.VERSION_CODES.O)
 class DetailProfileFragment() : Fragment() {
     private lateinit var record: Record
+    private var position = 0
     private val viewModel: RecordViewModel by activityViewModels { RecordViewModel.Factory}
 
     //view
     private lateinit var viewLayout: LinearLayout
 
+    private lateinit var imageView: ImageView
     private lateinit var title: TextView
     private lateinit var rating: RatingBar
     private lateinit var beanName: TextView
@@ -46,6 +50,7 @@ class DetailProfileFragment() : Fragment() {
     //edit
     private lateinit var editLayout: LinearLayout
 
+    private lateinit var editImageView: ImageView
     private lateinit var editTitle: EditText
     private lateinit var editRating: RatingBar
     private lateinit var editBeanName: EditText
@@ -65,6 +70,8 @@ class DetailProfileFragment() : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             record = it.getSerializable(RECORD) as Record
+            position = it.getInt(POSITION)
+
         }
     }
 
@@ -83,6 +90,7 @@ class DetailProfileFragment() : Fragment() {
         //view
         viewLayout = view.findViewById(R.id.profileView)
 
+        imageView = view.findViewById(R.id.imageView)
         title = view.findViewById(R.id.profileTitle)
         rating = view.findViewById(R.id.profileRating)
         beanName = view.findViewById(R.id.profileBeanName)
@@ -94,6 +102,8 @@ class DetailProfileFragment() : Fragment() {
 
         modifyBtn = view.findViewById(R.id.modifyBtn)
         trashBtn = view.findViewById(R.id.trashBtn)
+
+        changeImage(position, imageView)
 
         modifyBtn.setOnClickListener {
             viewLayout.visibility = View.INVISIBLE
@@ -107,6 +117,7 @@ class DetailProfileFragment() : Fragment() {
         //edit
         editLayout = view.findViewById(R.id.profileEdit)
 
+        editImageView = view.findViewById(R.id.imageView_ed)
         editTitle = view.findViewById(R.id.profileEditTitle)
         editRating = view.findViewById(R.id.profileEditRating)
         editBeanName = view.findViewById(R.id.profileEditBeanName)
@@ -115,6 +126,8 @@ class DetailProfileFragment() : Fragment() {
         editDecomp = view.findViewById(R.id.profileEditDecomp)
         editWeight = view.findViewById(R.id.profileEditWeight)
         editTime = view.findViewById(R.id.profileEditTime)
+
+        changeImage(position, editImageView)
 
         editTime.setOnClickListener {
             showTimePickerDialog()
@@ -205,12 +218,23 @@ class DetailProfileFragment() : Fragment() {
         timePickerDialog.getButton(DatePickerDialog.BUTTON_POSITIVE).setTextColor(Color.BLACK)
     }
 
+    private fun changeImage(position: Int, imageView: ImageView) {
+        when(position % 5) {
+            0 -> imageView.setImageResource(R.drawable.coffee1)
+            1 -> imageView.setImageResource(R.drawable.coffee2)
+            2 -> imageView.setImageResource(R.drawable.coffee3)
+            3 -> imageView.setImageResource(R.drawable.coffee4)
+            4 -> imageView.setImageResource(R.drawable.coffee5)
+        }
+    }
+
     companion object {
         @JvmStatic
-        fun newInstance(record: Record) =
+        fun newInstance(record: Record, position: Int) =
             DetailProfileFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(RECORD, record)
+                    putInt(POSITION, position)
                 }
             }
     }

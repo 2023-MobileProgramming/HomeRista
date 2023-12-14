@@ -184,11 +184,11 @@ class RecordFragment : Fragment() {
             }
 
             if(weight.text.isNullOrEmpty()) {
-                Toast.makeText(requireContext(), "무개를 입력해주세요!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "무게를 입력해주세요!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener // 람다 함수 종료
             }
             if(!weight.text.isDigitsOnly()) {
-                Toast.makeText(requireContext(), "무개는 숫자만 입력해주세요!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "무게는 숫자만 입력해주세요!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener // 람다 함수 종료
             }
 
