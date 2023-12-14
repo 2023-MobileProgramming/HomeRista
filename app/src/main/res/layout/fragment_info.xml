@@ -181,7 +181,7 @@
                     android:id="@+id/et_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="무개입력"
+                    android:hint="무게입력"
                     android:textSize="12dp" />
 
                 <TextView
