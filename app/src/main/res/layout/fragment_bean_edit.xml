@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="1">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,7 +131,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/bean_image">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -155,13 +156,11 @@
                     style="@style/BeanSeekBar"
                     android:layout_width="250dp"
                     android:layout_height="20dp"
-                    android:layout_marginTop="30dp"
                     android:layout_marginBottom="25dp"
                     app:layout_constraintBottom_toTopOf="@+id/beanEditSweetSalty"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.132"
-                    app:layout_constraintStart_toEndOf="@+id/textView16"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/textView16" />
 
                 <!--            단맛, 짠맛-->
                 <TextView
