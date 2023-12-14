@@ -38,9 +38,9 @@
                         android:id="@+id/imageView"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
-                        android:background="@drawable/profile_coffee"
+                        android:background="@drawable/profile_coffee3"
                         android:paddingRight="20sp"
-                        android:scaleType="fitCenter"
+                        android:scaleType="centerCrop"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,8 @@
 
                     <RatingBar
                         android:id="@+id/profileRating"
-
+                        android:scaleX="0.9"
+                        android:scaleY="0.9"
                         android:layout_width="240dp"
                         android:layout_height="60dp"
                         android:paddingLeft="5sp"
@@ -325,7 +326,7 @@
                             android:id="@+id/imageView_ed"
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
-                            android:background="@drawable/profile_coffee"
+                            android:background="@drawable/profile_coffee3"
                             android:paddingRight="20sp"
                             android:scaleType="fitCenter"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -365,10 +366,12 @@
 
                         <RatingBar
                             android:id="@+id/profileEditRating"
-
+                            android:numStars="5"
                             android:layout_width="240dp"
                             android:layout_height="60dp"
                             android:paddingLeft="5sp"
+                            android:scaleX="0.9"
+                            android:scaleY="0.9"
                             app:layout_constraintStart_toStartOf="@+id/textView27_ed"
                             app:layout_constraintTop_toBottomOf="@+id/profileEditTitle" />
 
