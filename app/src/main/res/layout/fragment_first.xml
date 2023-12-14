@@ -88,7 +88,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
+                        android:layout_margin="10dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="4dp"
                         app:cardBackgroundColor="#F6E9DA">
@@ -136,7 +136,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
+                        android:layout_margin="10dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="4dp"
                         app:cardBackgroundColor="#F6E9DA" >
@@ -181,7 +181,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
+                        android:layout_margin="10dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="4dp"
                         app:cardBackgroundColor="#F6E9DA">
@@ -226,7 +226,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
+                        android:layout_margin="10dp"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="4dp"
                         app:cardBackgroundColor="#F6E9DA">
@@ -308,28 +308,38 @@
                 android:layout_marginRight="10dp"
                 android:paddingBottom="10dp">
 
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="7dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="3dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="#F6E9DA"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp">
 
+                    <ImageView
+                        android:layout_width="280dp"
+                        android:layout_height="210dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="140dp"
+                        android:padding="0dp"
+                        android:src="@drawable/content1"/>
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center|left"
-                        android:layout_marginLeft="12dp"
+                        android:layout_gravity="center|right"
+                        android:gravity="right"
+                        android:layout_marginRight="25dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity=""
                             android:fontFamily="@font/font1"
-                            android:text="나라별 \n이색 커피"
+                            android:gravity="right"
+                            android:text="커피 취향으로 \n보는 심리 테스트"
                             android:textColor="#533B30"
                             android:textSize="22dp"
                             android:textStyle="bold" />
@@ -337,21 +347,16 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center|left"
+                            android:layout_gravity="right"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/font3"
-                            android:gravity="left"
-                            android:text="세계 여행하면서\n여유롭게 커피 마시는\n상상을 해요~"
+                            android:gravity="right"
+                            android:text="mbti보다 정확하다는\n커피 심리 테스트"
                             android:textColor="#533B30"
-                            android:textSize="18dp" />
+                            android:textSize="16dp" />
                     </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="180dp"
-                        android:layout_height="240dp"
-                        android:layout_gravity="right"
-                        android:padding="0dp"
-                        android:src="@drawable/content1"></ImageView>
+
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
@@ -367,9 +372,9 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     android:layout_weight="1"
-                    android:layout_margin="7dp"
+                    android:layout_margin="3dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="4dp"
                     app:cardBackgroundColor="#F6E9DA">
@@ -384,7 +389,7 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="커피는 나쁜걸까?"
+                            android:text="5분이면 만드는\n달고나 라떼"
                             android:fontFamily="@font/font1"
                             android:textColor="#533B30"
                             android:textSize="20dp"
@@ -394,19 +399,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:gravity="center"
-                            android:layout_gravity="center|left"
+                            android:layout_gravity="left"
                             android:textColor="#533B30"
                             android:fontFamily="@font/font3"
-                            android:text="커피에대한 오해들\n커피는 억울해"
-                            android:textSize="18dp" />
+                            android:text="요즘 핫한 달고나라떼\n맛있게 만드는 법"
+                            android:textSize="16dp" />
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="180dp"
-                        android:layout_height="240dp"
-                        android:src="@drawable/content2"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/curating1"
                         android:layout_gravity="right"
+                        android:layout_marginBottom="60dp"
                         android:padding="0dp">
                     </ImageView>
                 </androidx.cardview.widget.CardView>
@@ -424,7 +429,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     android:layout_weight="1"
                     android:layout_margin="7dp"
                     app:cardCornerRadius="8dp"
@@ -435,14 +440,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_gravity="center|left"
-                        android:layout_marginLeft="15dp">
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="15dp">
 
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Today \nMagazine"
+                            android:text="건대 모프카페\n새단장했어요"
+                            android:gravity="right"
                             android:fontFamily="@font/font1"
                             android:textColor="#533B30"
                             android:textSize="22dp"
@@ -456,16 +462,17 @@
                             android:textColor="#533B30"
                             android:layout_gravity="center"
                             android:fontFamily="@font/font3"
-                            android:text="새로운 소식은\n홈리스타에서 만나봐요"
-                            android:textSize="18dp" />
+                            android:text="광진구 화양동 35길\n세븐일레븐 건물 2층"
+                            android:textSize="16dp" />
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="240dp"
                         android:textColor="#533B30"
+                        android:layout_marginLeft="8dp"
                         android:src="@drawable/content3"
-                        android:layout_gravity="right"
+                        android:layout_gravity="left"
                         android:padding="0dp">
                     </ImageView>
                 </androidx.cardview.widget.CardView>
@@ -488,7 +495,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="더 완벽한 바리스타가 되는 법"
+                android:text="더 완벽한 바리스타가 되는 길"
                 android:textSize="20dp"
                 android:fontFamily="@font/font3"
                 android:typeface="serif"
@@ -525,7 +532,7 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:padding="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
@@ -544,7 +551,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -555,7 +562,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -574,13 +581,13 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:padding="3dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
                                 android:id="@+id/tool3"
-                                android:src="@drawable/tool3"
+                                android:src="@drawable/tool2"
                                 android:layout_marginTop="5dp">
                             </ImageView>
 
@@ -593,7 +600,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -603,7 +610,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -626,14 +633,15 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
                                 android:id="@+id/tool6"
                                 android:src="@drawable/tool6"
-                                android:layout_marginTop="5dp">
+                                android:layout_marginTop="0dp">
                             </ImageView>
                             <TextView
                                 android:layout_width="match_parent"
@@ -644,7 +652,7 @@
                                 android:textColor="#533B30"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="0dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -655,7 +663,7 @@
                                 android:textStyle="bold"
                                 android:textColor="#533B30"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -674,25 +682,26 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:background="@drawable/view_border"
-                            android:padding="5dp">
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp">
 
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="180dp"
-                                android:layout_marginTop="5dp"
+                                android:layout_marginTop="0dp"
                                 android:id="@+id/tool4"
                                 android:src="@drawable/tool4">
                             </ImageView>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="25dp"
-                                android:text="캐맥스가 자랑하는 과학적 기구"
+                                android:text="특허 과학적 드리퍼"
                                 android:fontFamily="@font/font2"
                                 android:textColor="#533B30"
                                 android:textSize="13dp"
                                 android:ellipsize="end"
                                 android:gravity="center"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_marginTop="3dp"/>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -703,7 +712,7 @@
                                 android:gravity="center"
                                 android:textStyle="bold"
                                 android:textSize="18dp"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_marginBottom="5dp"/>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
