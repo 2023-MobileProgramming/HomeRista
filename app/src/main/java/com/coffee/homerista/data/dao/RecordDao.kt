@@ -17,6 +17,10 @@ interface RecordDao {
 
     @Query("SELECT * FROM record WHERE date = :date ORDER BY id DESC")
     fun loadAllByDate(date: Long): List<Record>
+
+    @Query("SELECT * FROM record WHERE date BETWEEN :startDate AND :endDate")
+    fun loadAllByMonth(startDate: Long, endDate: Long): List<Record>
+
     @Insert
     fun insertAll(vararg records: Record)
 
